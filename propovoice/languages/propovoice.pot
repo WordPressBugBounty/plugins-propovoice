@@ -1,0 +1,2592 @@
+# Copyright (c) 2024 Rakibul Hasan. All Rights Reserved.
+msgid ""
+msgstr ""
+"Project-Id-Version: Propovoice 1.7.6.4\n"
+"Report-Msgid-Bugs-To: https://github.com/therakib7/propovoice/issues\n"
+"Last-Translator: therakib7@gmail.com\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-06-02T03:44:43+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: propovoice\n"
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: propovoice.php
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:26
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:27
+#: dist/propovoice/includes/Setup/InstallCtrl.php:114
+#: includes/MenuPage/Type/Dashboard.php:26
+#: includes/MenuPage/Type/Dashboard.php:27
+#: includes/Setup/InstallCtrl.php:114
+msgid "Propovoice"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: propovoice.php
+msgid "https://wordpress.org/plugins/propovoice"
+msgstr ""
+
+#. Description of the plugin
+#: propovoice.php
+msgid "Lead, Deal, Estimate, Invoice, Billing, Client, Project Automation"
+msgstr ""
+
+#. Author URI of the plugin
+#: propovoice.php
+msgid "https://propovoice.com"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Action.php:105
+#: dist/propovoice/includes/Api/Type/Action.php:205
+#: includes/Api/Type/Action.php:105
+#: includes/Api/Type/Action.php:205
+msgid "Required field is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Business.php:260
+#: dist/propovoice/includes/Api/Type/Business.php:379
+#: dist/propovoice/includes/Api/Type/Team.php:180
+#: dist/propovoice/includes/Api/Type/Team.php:291
+#: includes/Api/Type/Business.php:260
+#: includes/Api/Type/Business.php:379
+#: includes/Api/Type/Team.php:180
+#: includes/Api/Type/Team.php:291
+msgid "Name is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Client.php:247
+#: dist/propovoice/includes/Api/Type/Client.php:406
+#: dist/propovoice/includes/Api/Type/Deal.php:443
+#: dist/propovoice/includes/Api/Type/Deal.php:656
+#: dist/propovoice/includes/Api/Type/Lead.php:361
+#: dist/propovoice/includes/Api/Type/Lead.php:510
+#: dist/propovoice/includes/Api/Type/Project.php:570
+#: dist/propovoice/includes/Api/Type/Project.php:782
+#: includes/Api/Type/Client.php:247
+#: includes/Api/Type/Client.php:406
+#: includes/Api/Type/Deal.php:443
+#: includes/Api/Type/Deal.php:656
+#: includes/Api/Type/Lead.php:361
+#: includes/Api/Type/Lead.php:510
+#: includes/Api/Type/Project.php:570
+#: includes/Api/Type/Project.php:782
+msgid "Contact info is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Client.php:255
+#: includes/Api/Type/Client.php:255
+msgid "Client already exists! Email or Mobile should be unique"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Client.php:276
+#: dist/propovoice/includes/Api/Type/Client.php:432
+#: includes/Api/Type/Client.php:276
+#: includes/Api/Type/Client.php:432
+msgid "You can not add a Team member as client"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Client.php:413
+#: dist/propovoice/includes/Api/Type/Contact.php:362
+#: dist/propovoice/includes/Api/Type/Org.php:277
+#: dist/propovoice/includes/Api/Type/Org.php:396
+#: dist/propovoice/includes/Api/Type/Person.php:330
+#: dist/propovoice/includes/Api/Type/Person.php:504
+#: dist/propovoice/includes/Api/Type/Team.php:192
+#: dist/propovoice/includes/Api/Type/Team.php:303
+#: includes/Api/Type/Client.php:413
+#: includes/Api/Type/Contact.php:362
+#: includes/Api/Type/Org.php:277
+#: includes/Api/Type/Org.php:396
+#: includes/Api/Type/Person.php:330
+#: includes/Api/Type/Person.php:504
+#: includes/Api/Type/Team.php:192
+#: includes/Api/Type/Team.php:303
+msgid "Email id is not valid!"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Contact.php:355
+#: dist/propovoice/includes/Api/Type/Note.php:165
+#: dist/propovoice/includes/Api/Type/Note.php:203
+#: dist/propovoice/includes/Api/Type/Org.php:270
+#: dist/propovoice/includes/Api/Type/Org.php:389
+#: dist/propovoice/includes/Api/Type/Person.php:323
+#: dist/propovoice/includes/Api/Type/Person.php:497
+#: includes/Api/Type/Contact.php:355
+#: includes/Api/Type/Note.php:165
+#: includes/Api/Type/Note.php:203
+#: includes/Api/Type/Org.php:270
+#: includes/Api/Type/Org.php:389
+#: includes/Api/Type/Person.php:323
+#: includes/Api/Type/Person.php:497
+msgid "Name field is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Dashboard.php:53
+#: includes/Api/Type/Dashboard.php:53
+msgid "Section is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Deal.php:468
+#: includes/Api/Type/Deal.php:468
+msgid "Please select a stage"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/EstInv.php:665
+#: dist/propovoice/includes/Api/Type/EstInv.php:832
+#: includes/Api/Type/EstInv.php:665
+#: includes/Api/Type/EstInv.php:832
+msgid "Business is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/EstInv.php:672
+#: includes/Api/Type/EstInv.php:672
+msgid "Module is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/EstInv.php:679
+#: dist/propovoice/includes/Api/Type/EstInv.php:839
+#: dist/propovoice/includes/Helpers/I18n.php:52
+#: includes/Api/Type/EstInv.php:679
+#: includes/Api/Type/EstInv.php:839
+#: includes/Helpers/I18n.php:52
+msgid "Receiver is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/File.php:183
+#: dist/propovoice/includes/Api/Type/Note.php:126
+#: includes/Api/Type/File.php:183
+#: includes/Api/Type/Note.php:126
+msgid "ago"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/File.php:226
+#: dist/propovoice/includes/Api/Type/Note.php:158
+#: includes/Api/Type/File.php:226
+#: includes/Api/Type/Note.php:158
+msgid "Tab ID is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/File.php:233
+#: dist/propovoice/includes/Api/Type/Webhook.php:192
+#: dist/propovoice/includes/Api/Type/Webhook.php:263
+#: includes/Api/Type/File.php:233
+#: includes/Api/Type/Webhook.php:192
+#: includes/Api/Type/Webhook.php:263
+msgid "Type is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Lead.php:371
+#: includes/Api/Type/Lead.php:371
+msgid "Lead already exists!"
+msgstr ""
+
+#. Translators: %1$s is the invalid file type provided by the user, %2$s is a list of supported file types
+#: dist/propovoice/includes/Api/Type/Media.php:348
+#: includes/Api/Type/Media.php:348
+msgid "Invalid file type: %1$s. Supported file types: %2$s"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Package.php:442
+#: includes/Api/Type/Package.php:442
+msgid "Before publish please activate payment method from Setting -> Service"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Payment.php:242
+#: dist/propovoice/includes/Helpers/I18n.php:362
+#: includes/Api/Type/Payment.php:242
+#: includes/Helpers/I18n.php:362
+msgid "Paypal"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Payment.php:246
+#: dist/propovoice/includes/Helpers/I18n.php:361
+#: includes/Api/Type/Payment.php:246
+#: includes/Helpers/I18n.php:361
+msgid "Stripe"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Payment.php:250
+#: includes/Api/Type/Payment.php:250
+msgid "Bank & Others"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Person.php:338
+#: includes/Api/Type/Person.php:338
+msgid "Contact already exists!"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Project.php:556
+#: includes/Api/Type/Project.php:556
+msgid "Please title is required"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Project.php:563
+#: includes/Api/Type/Project.php:563
+msgid "Please select a status"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Request.php:364
+#: dist/propovoice/includes/Api/Type/Task.php:402
+#: includes/Api/Type/Request.php:364
+#: includes/Api/Type/Task.php:402
+msgid "Title field is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Request.php:377
+#: includes/Api/Type/Request.php:377
+msgid "Your request limit exceeded"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Request.php:387
+#: includes/Api/Type/Request.php:387
+msgid "Your at a time request limit exceeded"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Setting.php:270
+#: dist/propovoice/includes/Api/Type/Setting.php:560
+#: includes/Api/Type/Setting.php:270
+#: includes/Api/Type/Setting.php:560
+msgid "Tab is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Setting.php:656
+#: includes/Api/Type/Setting.php:656
+msgid "Please install and activate WooCommerce plugin."
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Setting.php:729
+#: includes/Api/Type/Setting.php:729
+msgid "Current password not matched!!!"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Setting.php:736
+#: includes/Api/Type/Setting.php:736
+msgid "Confirm password not matched!!!"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Task.php:305
+#: includes/Api/Type/Task.php:305
+msgid "Lead: "
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Task.php:311
+#: includes/Api/Type/Task.php:311
+msgid "Deal: "
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Task.php:317
+#: dist/propovoice/includes/Api/Type/Task.php:323
+#: includes/Api/Type/Task.php:317
+#: includes/Api/Type/Task.php:323
+msgid "Contact: "
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Task.php:329
+#: includes/Api/Type/Task.php:329
+msgid "Project: "
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Taxonomy.php:95
+#: dist/propovoice/includes/Api/Type/Taxonomy.php:347
+#: dist/propovoice/includes/Api/Type/Taxonomy.php:437
+#: includes/Api/Type/Taxonomy.php:95
+#: includes/Api/Type/Taxonomy.php:347
+#: includes/Api/Type/Taxonomy.php:437
+msgid "Taxonomy is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Team.php:187
+#: dist/propovoice/includes/Api/Type/Team.php:298
+#: includes/Api/Type/Team.php:187
+#: includes/Api/Type/Team.php:298
+msgid "Email is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Api/Type/Team.php:198
+#: includes/Api/Type/Team.php:198
+msgid "Role is missing"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/Fns.php:517
+#: includes/Helpers/Fns.php:517
+msgid "View"
+msgstr ""
+
+#. translators: %s template
+#: dist/propovoice/includes/Helpers/Fns.php:587
+#: includes/Helpers/Fns.php:587
+msgid "%s does not exist."
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:17
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:37
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:38
+#: includes/Helpers/I18n.php:17
+#: includes/MenuPage/Type/Dashboard.php:37
+#: includes/MenuPage/Type/Dashboard.php:38
+msgid "Dashboard"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:18
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:47
+#: includes/Helpers/I18n.php:18
+#: includes/MenuPage/Type/Dashboard.php:47
+msgid "Lead"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:19
+#: includes/Helpers/I18n.php:19
+msgid "Deal"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:20
+#: includes/Helpers/I18n.php:20
+msgid "Billing"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:21
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:67
+#: includes/Helpers/I18n.php:21
+#: includes/MenuPage/Type/Dashboard.php:67
+msgid "Estimate"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:22
+#: includes/Helpers/I18n.php:22
+msgid "Estimate No"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:23
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:72
+#: includes/Helpers/I18n.php:23
+#: includes/MenuPage/Type/Dashboard.php:72
+msgid "Invoice"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:24
+#: includes/Helpers/I18n.php:24
+msgid "Package"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:25
+#: includes/Helpers/I18n.php:25
+msgid "Invoice No"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:26
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:57
+#: includes/Helpers/I18n.php:26
+#: includes/MenuPage/Type/Dashboard.php:57
+msgid "Client"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:27
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:62
+#: includes/Helpers/I18n.php:27
+#: includes/MenuPage/Type/Dashboard.php:62
+msgid "Project"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:28
+#: includes/Helpers/I18n.php:28
+msgid "Task"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:29
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:77
+#: includes/Helpers/I18n.php:29
+#: includes/MenuPage/Type/Dashboard.php:77
+msgid "Contact"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:30
+#: includes/Helpers/I18n.php:30
+msgid "Contact Book"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:31
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:87
+#: includes/Helpers/I18n.php:31
+#: includes/MenuPage/Type/Dashboard.php:87
+msgid "Workflow"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:32
+#: includes/Helpers/I18n.php:32
+msgid "Create Workflow"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:33
+#: includes/Helpers/I18n.php:33
+msgid "Back"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:35
+#: includes/Helpers/I18n.php:35
+msgid "CRM"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:36
+#: includes/Helpers/I18n.php:36
+msgid "Collaboration"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:37
+#: includes/Helpers/I18n.php:37
+msgid "Service"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:38
+#: includes/Helpers/I18n.php:38
+msgid "Service Package Checkout"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:39
+#: includes/Helpers/I18n.php:39
+msgid "Services"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:40
+#: dist/propovoice/includes/Helpers/I18n.php:379
+#: includes/Helpers/I18n.php:40
+#: includes/Helpers/I18n.php:379
+msgid "Others"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:42
+#: includes/Helpers/I18n.php:42
+msgid "Successfully"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:43
+#: includes/Helpers/I18n.php:43
+msgid "Successfully Added"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:44
+#: includes/Helpers/I18n.php:44
+msgid "Successfully Updated"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:45
+#: includes/Helpers/I18n.php:45
+msgid "Successfully Deleted"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:46
+#: includes/Helpers/I18n.php:46
+msgid "Thanks for your message"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:47
+#: includes/Helpers/I18n.php:47
+msgid "Thanks for payment request"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:48
+#: includes/Helpers/I18n.php:48
+msgid "Mail successfully sent"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:49
+#: includes/Helpers/I18n.php:49
+msgid "Successfully moved to deal"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:50
+#: includes/Helpers/I18n.php:50
+msgid "Successfully moved to project"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:51
+#: includes/Helpers/I18n.php:51
+msgid "Are you sure to delete it?"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:53
+#: includes/Helpers/I18n.php:53
+msgid "Copied"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:54
+#: includes/Helpers/I18n.php:54
+msgid "convert"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:56
+#: includes/Helpers/I18n.php:56
+msgid "Overview"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:57
+#: includes/Helpers/I18n.php:57
+msgid "Total Client"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:58
+#: includes/Helpers/I18n.php:58
+msgid "Total Clients"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:59
+#: includes/Helpers/I18n.php:59
+msgid "Total Lead"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:60
+#: includes/Helpers/I18n.php:60
+msgid "Total Leads"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:61
+#: includes/Helpers/I18n.php:61
+msgid "Total Deal"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:62
+#: includes/Helpers/I18n.php:62
+msgid "Total Deals"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:63
+#: includes/Helpers/I18n.php:63
+msgid "Total Invoice"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:64
+#: includes/Helpers/I18n.php:64
+msgid "Total Invoices"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:65
+#: includes/Helpers/I18n.php:65
+msgid "Total Estimate"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:66
+#: includes/Helpers/I18n.php:66
+msgid "Total Estimates"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:67
+#: includes/Helpers/I18n.php:67
+msgid "Total Project"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:68
+#: includes/Helpers/I18n.php:68
+msgid "Total Projects"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:69
+#: includes/Helpers/I18n.php:69
+msgid "Latest"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:70
+#: includes/Helpers/I18n.php:70
+msgid "Latest Task"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:71
+#: includes/Helpers/I18n.php:71
+msgid "Tracking"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:72
+#: includes/Helpers/I18n.php:72
+msgid "Notifications"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:73
+#: includes/Helpers/I18n.php:73
+msgid "Unread"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:75
+#: includes/Helpers/I18n.php:75
+msgid "Level"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:76
+#: includes/Helpers/I18n.php:76
+msgid "Contact Image"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:77
+#: includes/Helpers/I18n.php:77
+msgid "Source"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:79
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:52
+#: includes/Helpers/I18n.php:79
+#: includes/MenuPage/Type/Dashboard.php:52
+msgid "Deal Pipeline"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:80
+#: includes/Helpers/I18n.php:80
+msgid "Deal Funnel"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:81
+#: includes/Helpers/I18n.php:81
+msgid "Deal Won"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:82
+#: includes/Helpers/I18n.php:82
+msgid "Deal Lost"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:83
+#: includes/Helpers/I18n.php:83
+msgid "Deal Stage"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:84
+#: includes/Helpers/I18n.php:84
+msgid "Add Stage"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:85
+#: includes/Helpers/I18n.php:85
+msgid "Add Deal"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:86
+#: includes/Helpers/I18n.php:86
+msgid "Contact Name"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:87
+#: includes/Helpers/I18n.php:87
+msgid "Stage"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:88
+#: includes/Helpers/I18n.php:88
+msgid "Won"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:89
+#: includes/Helpers/I18n.php:89
+msgid "Lost"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:90
+#: includes/Helpers/I18n.php:90
+msgid "Probability"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:92
+#: includes/Helpers/I18n.php:92
+msgid "&"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:93
+#: includes/Helpers/I18n.php:93
+msgid "Estimate Number"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:94
+#: includes/Helpers/I18n.php:94
+msgid "Estimate Date"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:95
+#: includes/Helpers/I18n.php:95
+msgid "Invoice Number"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:96
+#: includes/Helpers/I18n.php:96
+msgid "Invoice Date"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:97
+#: includes/Helpers/I18n.php:97
+msgid "Template"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:98
+#: includes/Helpers/I18n.php:98
+msgid "Select Template"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:99
+#: includes/Helpers/I18n.php:99
+msgid "Content"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:100
+#: includes/Helpers/I18n.php:100
+msgid "Add Content"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:101
+#: dist/propovoice/includes/Helpers/I18n.php:242
+#: includes/Helpers/I18n.php:101
+#: includes/Helpers/I18n.php:242
+msgid "Number"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:102
+#: includes/Helpers/I18n.php:102
+msgid "Sender"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:103
+#: includes/Helpers/I18n.php:103
+msgid "Receiver"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:104
+#: includes/Helpers/I18n.php:104
+msgid "Item"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:105
+#: includes/Helpers/I18n.php:105
+msgid "Items"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:106
+#: includes/Helpers/I18n.php:106
+msgid "Quantity"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:107
+#: includes/Helpers/I18n.php:107
+msgid "Rate"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:108
+#: includes/Helpers/I18n.php:108
+msgid "Amount"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:109
+#: dist/propovoice/includes/Helpers/I18n.php:138
+#: includes/Helpers/I18n.php:109
+#: includes/Helpers/I18n.php:138
+msgid "Additional"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:110
+#: includes/Helpers/I18n.php:110
+msgid "Extra"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:111
+#: dist/propovoice/includes/Helpers/I18n.php:390
+#: includes/Helpers/I18n.php:111
+#: includes/Helpers/I18n.php:390
+msgid "Subtotal"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:112
+#: includes/Helpers/I18n.php:112
+msgid "Download"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:113
+#: includes/Helpers/I18n.php:113
+msgid "Print"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:114
+#: includes/Helpers/I18n.php:114
+msgid "Send Email"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:115
+#: includes/Helpers/I18n.php:115
+msgid "Share"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:116
+#: includes/Helpers/I18n.php:116
+msgid "Send"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:117
+#: includes/Helpers/I18n.php:117
+msgid "Sent"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:118
+#: includes/Helpers/I18n.php:118
+msgid "Viewed"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:119
+#: includes/Helpers/I18n.php:119
+msgid "Accepted"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:120
+#: includes/Helpers/I18n.php:120
+msgid "Accept"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:121
+#: includes/Helpers/I18n.php:121
+msgid "Declined"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:122
+#: includes/Helpers/I18n.php:122
+msgid "Paid"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:123
+#: includes/Helpers/I18n.php:123
+msgid "Unpaid"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:124
+#: includes/Helpers/I18n.php:124
+msgid "Overdue"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:125
+#: includes/Helpers/I18n.php:125
+msgid "Reminder"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:126
+#: includes/Helpers/I18n.php:126
+msgid "Default"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:127
+#: includes/Helpers/I18n.php:127
+msgid "Recurring"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:128
+#: includes/Helpers/I18n.php:128
+msgid "Recurring Period"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:129
+#: includes/Helpers/I18n.php:129
+msgid "Onetime"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:130
+#: includes/Helpers/I18n.php:130
+msgid "Language"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:131
+#: includes/Helpers/I18n.php:131
+msgid "Hide"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:132
+#: includes/Helpers/I18n.php:132
+msgid "Position"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:133
+#: includes/Helpers/I18n.php:133
+msgid "Before"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:134
+#: includes/Helpers/I18n.php:134
+msgid "After"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:135
+#: includes/Helpers/I18n.php:135
+msgid "Authorized Signature"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:136
+#: includes/Helpers/I18n.php:136
+msgid "Signature"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:137
+#: includes/Helpers/I18n.php:137
+msgid "Style"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:139
+#: includes/Helpers/I18n.php:139
+msgid "Additional Info"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:140
+#: includes/Helpers/I18n.php:140
+msgid "Additional Note"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:141
+#: includes/Helpers/I18n.php:141
+msgid "Additional Attachment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:142
+#: includes/Helpers/I18n.php:142
+msgid "Additional Fee"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:143
+#: includes/Helpers/I18n.php:143
+msgid "Staff"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:144
+#: includes/Helpers/I18n.php:144
+msgid "Terms & Conditions"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:146
+#: includes/Helpers/I18n.php:146
+msgid "Create Package"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:147
+#: includes/Helpers/I18n.php:147
+msgid "Package Type"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:148
+#: includes/Helpers/I18n.php:148
+msgid "Package Status"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:149
+#: includes/Helpers/I18n.php:149
+msgid "Package Details"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:150
+#: includes/Helpers/I18n.php:150
+msgid "Package Pricing"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:151
+#: includes/Helpers/I18n.php:151
+msgid "Project request limit"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:152
+#: includes/Helpers/I18n.php:152
+msgid "Project request in a"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:153
+#: includes/Helpers/I18n.php:153
+msgid "Project request at a time"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:155
+#: includes/Helpers/I18n.php:155
+msgid "Order"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:156
+#: includes/Helpers/I18n.php:156
+msgid "Order Status"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:159
+#: includes/Helpers/I18n.php:159
+msgid "Add Client"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:161
+#: includes/Helpers/I18n.php:161
+msgid "Add Project"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:162
+#: includes/Helpers/I18n.php:162
+msgid "Currency"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:163
+#: includes/Helpers/I18n.php:163
+msgid "Budget"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:164
+#: includes/Helpers/I18n.php:164
+msgid "Price"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:165
+#: includes/Helpers/I18n.php:165
+msgid "Pricing"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:167
+#: includes/Helpers/I18n.php:167
+msgid "Add Person"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:168
+#: includes/Helpers/I18n.php:168
+msgid "Add Organization"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:169
+#: includes/Helpers/I18n.php:169
+msgid "Book"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:170
+#: includes/Helpers/I18n.php:170
+msgid "Person"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:171
+#: includes/Helpers/I18n.php:171
+msgid "Organization"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:172
+#: includes/Helpers/I18n.php:172
+msgid "Name"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:173
+#: includes/Helpers/I18n.php:173
+msgid "Email"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:174
+#: includes/Helpers/I18n.php:174
+msgid "Mobile"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:175
+#: includes/Helpers/I18n.php:175
+msgid "Website"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:176
+#: includes/Helpers/I18n.php:176
+msgid "URL"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:177
+#: includes/Helpers/I18n.php:177
+msgid "Country"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:178
+#: includes/Helpers/I18n.php:178
+msgid "Region"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:179
+#: includes/Helpers/I18n.php:179
+msgid "State / Province / Region"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:180
+#: includes/Helpers/I18n.php:180
+msgid "City"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:181
+#: includes/Helpers/I18n.php:181
+msgid "ZIP Code"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:183
+#: includes/Helpers/I18n.php:183
+msgid "Home"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:184
+#: includes/Helpers/I18n.php:184
+msgid "Total"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:185
+#: includes/Helpers/I18n.php:185
+msgid "Preview"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:186
+#: includes/Helpers/I18n.php:186
+msgid "Preview & Share"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:187
+#: includes/Helpers/I18n.php:187
+msgid "Client Preview"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:188
+#: includes/Helpers/I18n.php:188
+msgid "Full Preview"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:189
+#: includes/Helpers/I18n.php:189
+msgid "Template Preview"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:190
+#: includes/Helpers/I18n.php:190
+msgid "Author"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:192
+#: includes/Helpers/I18n.php:192
+msgid "Bill"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:193
+#: includes/Helpers/I18n.php:193
+msgid "Bill To"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:194
+#: includes/Helpers/I18n.php:194
+msgid "Info"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:195
+#: includes/Helpers/I18n.php:195
+msgid "No"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:197
+#: includes/Helpers/I18n.php:197
+msgid "Add Checklist"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:198
+#: includes/Helpers/I18n.php:198
+msgid "task done out of"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:199
+#: includes/Helpers/I18n.php:199
+msgid "Comment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:200
+#: includes/Helpers/I18n.php:200
+msgid "Edit Comment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:201
+#: includes/Helpers/I18n.php:201
+msgid "Send to Team"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:202
+#: includes/Helpers/I18n.php:202
+msgid "Reply to Client"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:203
+#: includes/Helpers/I18n.php:203
+msgid "Write your message"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:204
+#: includes/Helpers/I18n.php:204
+msgid "Write your comment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:205
+#: includes/Helpers/I18n.php:205
+msgid "Task Creator"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:206
+#: includes/Helpers/I18n.php:206
+msgid "This is no comment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:208
+#: includes/Helpers/I18n.php:208
+msgid "Table View"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:209
+#: includes/Helpers/I18n.php:209
+msgid "Requested Project"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:210
+#: includes/Helpers/I18n.php:210
+msgid "Board View"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:211
+#: includes/Helpers/I18n.php:211
+msgid "You don't have any Requested Project"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:212
+#: includes/Helpers/I18n.php:212
+msgid "You don't have any Project"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:214
+#: includes/Helpers/I18n.php:214
+msgid "Status"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:215
+#: includes/Helpers/I18n.php:215
+msgid "Created At"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:216
+#: includes/Helpers/I18n.php:216
+msgid "Date"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:217
+#: includes/Helpers/I18n.php:217
+msgid "Start Date"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:218
+#: includes/Helpers/I18n.php:218
+msgid "Due Date"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:219
+#: includes/Helpers/I18n.php:219
+msgid "Action"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:220
+#: includes/Helpers/I18n.php:220
+msgid "Show"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:221
+#: includes/Helpers/I18n.php:221
+msgid "All"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:222
+#: includes/Helpers/I18n.php:222
+msgid "Always"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:223
+#: includes/Helpers/I18n.php:223
+msgid "Search"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:224
+#: includes/Helpers/I18n.php:224
+msgid "Select"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:225
+#: includes/Helpers/I18n.php:225
+msgid "Type"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:226
+#: includes/Helpers/I18n.php:226
+msgid "Location"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:227
+#: includes/Helpers/I18n.php:227
+msgid "Duplicate"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:228
+#: includes/Helpers/I18n.php:228
+msgid "Draft"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:229
+#: includes/Helpers/I18n.php:229
+msgid "Request"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:230
+#: includes/Helpers/I18n.php:230
+msgid "Request Status"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:231
+#: includes/Helpers/I18n.php:231
+msgid "Request Form"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:232
+#: includes/Helpers/I18n.php:232
+msgid "Portal Access"
+msgstr ""
+
+#. translators: %s: Add, Edit %s: Module Name
+#: dist/propovoice/includes/Helpers/I18n.php:235
+#: includes/Helpers/I18n.php:235
+msgid "%1$s %2$s here"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:236
+#: includes/Helpers/I18n.php:236
+msgid "Add payment info here"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:237
+#: includes/Helpers/I18n.php:237
+msgid "Create"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:238
+#: includes/Helpers/I18n.php:238
+msgid "Icon"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:239
+#: dist/propovoice/includes/Helpers/I18n.php:259
+#: includes/Helpers/I18n.php:239
+#: includes/Helpers/I18n.php:259
+msgid "Text"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:240
+#: includes/Helpers/I18n.php:240
+msgid "Multiselect"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:241
+#: includes/Helpers/I18n.php:241
+msgid "Radio"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:243
+#: includes/Helpers/I18n.php:243
+msgid "Image"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:244
+#: includes/Helpers/I18n.php:244
+msgid "Add"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:245
+#: includes/Helpers/I18n.php:245
+msgid "Add To"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:246
+#: includes/Helpers/I18n.php:246
+msgid "New"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:247
+#: includes/Helpers/I18n.php:247
+msgid "Add New"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:248
+#: includes/Helpers/I18n.php:248
+msgid "Add New Contact"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:249
+#: includes/Helpers/I18n.php:249
+msgid "Add New Client"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:250
+#: includes/Helpers/I18n.php:250
+msgid "Edit"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:251
+#: includes/Helpers/I18n.php:251
+msgid "Edit Contact"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:252
+#: includes/Helpers/I18n.php:252
+msgid "Edit Client"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:253
+#: dist/propovoice/includes/Setup/InstallCtrl.php:127
+#: includes/Helpers/I18n.php:253
+#: includes/Setup/InstallCtrl.php:127
+msgid "Update"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:254
+#: includes/Helpers/I18n.php:254
+msgid "Delete"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:255
+#: includes/Helpers/I18n.php:255
+msgid "From"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:256
+#: includes/Helpers/I18n.php:256
+msgid "here"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:257
+#: includes/Helpers/I18n.php:257
+msgid "Tag"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:258
+#: includes/Helpers/I18n.php:258
+msgid "Background"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:260
+#: includes/Helpers/I18n.php:260
+msgid "Color"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:261
+#: includes/Helpers/I18n.php:261
+msgid "Description"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:262
+#: includes/Helpers/I18n.php:262
+msgid "Discussion"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:263
+#: includes/Helpers/I18n.php:263
+msgid "Note"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:264
+#: includes/Helpers/I18n.php:264
+msgid "Title"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:265
+#: includes/Helpers/I18n.php:265
+msgid "Start"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:266
+#: includes/Helpers/I18n.php:266
+msgid "Due"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:267
+#: includes/Helpers/I18n.php:267
+msgid "Subject"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:268
+#: includes/Helpers/I18n.php:268
+msgid "Message"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:269
+#: includes/Helpers/I18n.php:269
+msgid "Edit Message"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:270
+#: includes/Helpers/I18n.php:270
+msgid "Clear"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:271
+#: includes/Helpers/I18n.php:271
+msgid "Cancel"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:272
+#: includes/Helpers/I18n.php:272
+msgid "Account"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:273
+#: dist/propovoice/includes/Helpers/I18n.php:363
+#: includes/Helpers/I18n.php:273
+#: includes/Helpers/I18n.php:363
+msgid "Public"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:274
+#: includes/Helpers/I18n.php:274
+msgid "Publish"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:275
+#: includes/Helpers/I18n.php:275
+msgid "Secret"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:276
+#: includes/Helpers/I18n.php:276
+msgid "ID"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:277
+#: includes/Helpers/I18n.php:277
+msgid "Key"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:278
+#: includes/Helpers/I18n.php:278
+msgid "Personal"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:279
+#: includes/Helpers/I18n.php:279
+msgid "Profile"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:280
+#: includes/Helpers/I18n.php:280
+msgid "File"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:281
+#: includes/Helpers/I18n.php:281
+msgid "Section"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:282
+#: includes/Helpers/I18n.php:282
+msgid "Details"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:283
+#: includes/Helpers/I18n.php:283
+msgid "Category"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:284
+#: includes/Helpers/I18n.php:284
+msgid "Assign"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:286
+#: includes/Helpers/I18n.php:286
+msgid "Logo"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:287
+#: includes/Helpers/I18n.php:287
+msgid "Continue"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:288
+#: includes/Helpers/I18n.php:288
+msgid "Save"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:289
+#: includes/Helpers/I18n.php:289
+msgid "Save & Continue"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:290
+#: includes/Helpers/I18n.php:290
+msgid "Copy Embedded Code"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:291
+#: includes/Helpers/I18n.php:291
+msgid "Close"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:293
+#: includes/Helpers/I18n.php:293
+msgid "Common"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:294
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:110
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:111
+#: includes/Helpers/I18n.php:294
+#: includes/MenuPage/Type/Dashboard.php:110
+#: includes/MenuPage/Type/Dashboard.php:111
+msgid "Settings"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:295
+#: includes/Helpers/I18n.php:295
+msgid "Prefix"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:296
+#: includes/Helpers/I18n.php:296
+msgid "General"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:297
+#: dist/propovoice/view/template/partial/login.php:121
+#: includes/Helpers/I18n.php:297
+#: view/template/partial/login.php:121
+msgid "Password"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:298
+#: includes/Helpers/I18n.php:298
+msgid "Business"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:299
+#: includes/Helpers/I18n.php:299
+msgid "Pay"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:300
+#: includes/Helpers/I18n.php:300
+msgid "Buy"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:301
+#: includes/Helpers/I18n.php:301
+msgid "Buy With"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:302
+#: includes/Helpers/I18n.php:302
+msgid "Buy Now"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:303
+#: includes/Helpers/I18n.php:303
+msgid "Subscribe"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:304
+#: includes/Helpers/I18n.php:304
+msgid "Subscribed"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:305
+#: includes/Helpers/I18n.php:305
+msgid "Subscription"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:306
+#: includes/Helpers/I18n.php:306
+msgid "Payment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:307
+#: includes/Helpers/I18n.php:307
+msgid "History"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:308
+#: includes/Helpers/I18n.php:308
+msgid "Payment Info"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:309
+#: includes/Helpers/I18n.php:309
+msgid "Payment Method"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:310
+#: includes/Helpers/I18n.php:310
+msgid "Method"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:311
+#: includes/Helpers/I18n.php:311
+msgid "Variable"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:312
+#: includes/Helpers/I18n.php:312
+msgid "Import"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:313
+#: includes/Helpers/I18n.php:313
+msgid "Export"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:314
+#: dist/propovoice/includes/Helpers/I18n.php:406
+#: includes/Helpers/I18n.php:314
+#: includes/Helpers/I18n.php:406
+msgid "Integration"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:315
+#: includes/Helpers/I18n.php:315
+msgid "License"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:316
+#: includes/Helpers/I18n.php:316
+msgid "Expires"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:317
+#: includes/Helpers/I18n.php:317
+msgid "Valid"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:318
+#: includes/Helpers/I18n.php:318
+msgid "Expired"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:319
+#: includes/Helpers/I18n.php:319
+msgid "Priority"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:320
+#: includes/Helpers/I18n.php:320
+msgid "Meeting Place or"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:321
+#: includes/Helpers/I18n.php:321
+msgid "meet"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:322
+#: dist/propovoice/includes/Helpers/I18n.php:375
+#: includes/Helpers/I18n.php:322
+#: includes/Helpers/I18n.php:375
+msgid "Active"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:323
+#: includes/Helpers/I18n.php:323
+msgid "Activate"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:324
+#: includes/Helpers/I18n.php:324
+msgid "Deactivate"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:326
+#: includes/Helpers/I18n.php:326
+msgid "Thanks for accepting"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:327
+#: includes/Helpers/I18n.php:327
+msgid "Sorry for declining"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:328
+#: includes/Helpers/I18n.php:328
+msgid "Sorry for the decline"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:329
+#: includes/Helpers/I18n.php:329
+msgid "You haven't pay yet"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:330
+#: includes/Helpers/I18n.php:330
+msgid "Thanks, We have received your payment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:331
+#: includes/Helpers/I18n.php:331
+msgid "You have submitted your payment information. it will take a while to approve the payment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:332
+#: includes/Helpers/I18n.php:332
+msgid "Approval Pending"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:335
+#: includes/Helpers/I18n.php:335
+msgid "Pipeline"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:336
+#: includes/Helpers/I18n.php:336
+msgid "Back to WP Dashboard"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:337
+#: includes/Helpers/I18n.php:337
+msgid "Mark as"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:338
+#: includes/Helpers/I18n.php:338
+msgid "Mark as Sent"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:339
+#: includes/Helpers/I18n.php:339
+msgid "Mark as Paid"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:340
+#: includes/Helpers/I18n.php:340
+msgid "Mark as Accepted"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:341
+#: includes/Helpers/I18n.php:341
+msgid "Mark as Declined"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:342
+#: includes/Helpers/I18n.php:342
+msgid "Drive"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:343
+#: includes/Helpers/I18n.php:343
+msgid "Done"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:344
+#: includes/Helpers/I18n.php:344
+msgid "completed"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:345
+#: includes/Helpers/I18n.php:345
+msgid "as"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:346
+#: includes/Helpers/I18n.php:346
+msgid "successful"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:347
+#: includes/Helpers/I18n.php:347
+msgid "Submit"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:348
+#: includes/Helpers/I18n.php:348
+msgid "Proposal"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:349
+#: includes/Helpers/I18n.php:349
+msgid "Accounting"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:350
+#: includes/Helpers/I18n.php:350
+msgid "Need Support"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:351
+#: includes/Helpers/I18n.php:351
+msgid "Feedback"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:352
+#: includes/Helpers/I18n.php:352
+msgid "Attachment"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:353
+#: includes/Helpers/I18n.php:353
+msgid "Fee"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:354
+#: includes/Helpers/I18n.php:354
+msgid "Field"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:355
+#: includes/Helpers/I18n.php:355
+msgid "Fields"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:356
+#: includes/Helpers/I18n.php:356
+msgid "Team"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:357
+#: includes/Helpers/I18n.php:357
+msgid "Team Member"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:358
+#: includes/Helpers/I18n.php:358
+msgid "Discount"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:359
+#: includes/Helpers/I18n.php:359
+msgid "Saved Items"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:360
+#: includes/Helpers/I18n.php:360
+msgid "Transaction"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:364
+#: includes/Helpers/I18n.php:364
+msgid "delivery"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:365
+#: includes/Helpers/I18n.php:365
+msgid "option"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:366
+#: includes/Helpers/I18n.php:366
+msgid "Upload"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:367
+#: includes/Helpers/I18n.php:367
+msgid "link"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:368
+#: includes/Helpers/I18n.php:368
+msgid "First"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:369
+#: includes/Helpers/I18n.php:369
+msgid "Last"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:370
+#: includes/Helpers/I18n.php:370
+msgid "Company"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:371
+#: includes/Helpers/I18n.php:371
+msgid "Connect Zoom"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:372
+#: includes/Helpers/I18n.php:372
+msgid "Unschedule"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:373
+#: includes/Helpers/I18n.php:373
+msgid "Address"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:374
+#: includes/Helpers/I18n.php:374
+msgid " Timeline"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:376
+#: includes/Helpers/I18n.php:376
+msgid "Media"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:377
+#: includes/Helpers/I18n.php:377
+msgid "Gallery"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:378
+#: includes/Helpers/I18n.php:378
+msgid "Insert"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:380
+#: includes/Helpers/I18n.php:380
+msgid "Bank"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:381
+#: includes/Helpers/I18n.php:381
+msgid "Skip"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:382
+#: includes/Helpers/I18n.php:382
+msgid "Label"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:383
+#: includes/Helpers/I18n.php:383
+msgid "Block"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:384
+#: includes/Helpers/I18n.php:384
+msgid "Move"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:385
+#: includes/Helpers/I18n.php:385
+msgid "Move to"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:386
+#: includes/Helpers/I18n.php:386
+msgid "Moved to Project"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:387
+#: includes/Helpers/I18n.php:387
+msgid "Go"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:388
+#: includes/Helpers/I18n.php:388
+msgid "Receipt"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:389
+#: includes/Helpers/I18n.php:389
+msgid "Explore"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:391
+#: includes/Helpers/I18n.php:391
+msgid "With"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:393
+#: includes/Helpers/I18n.php:393
+msgid "Without"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:394
+#: includes/Helpers/I18n.php:394
+msgid "Parent"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:395
+#: includes/Helpers/I18n.php:395
+msgid "To"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:396
+#: includes/Helpers/I18n.php:396
+msgid "Copy"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:397
+#: includes/Helpers/I18n.php:397
+msgid "Copy to Invoice"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:398
+#: includes/Helpers/I18n.php:398
+msgid "Per"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:399
+#: includes/Helpers/I18n.php:399
+msgid "Each Item"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:400
+#: includes/Helpers/I18n.php:400
+msgid "Each Item Tax Field"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:401
+#: includes/Helpers/I18n.php:401
+msgid "Tax"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:402
+#: includes/Helpers/I18n.php:402
+msgid "Calculation"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:403
+#: includes/Helpers/I18n.php:403
+msgid "Fixed"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:404
+#: includes/Helpers/I18n.php:404
+msgid "Percent"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:405
+#: includes/Helpers/I18n.php:405
+msgid "Logout"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:407
+#: includes/Helpers/I18n.php:407
+msgid "License Manager"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:408
+#: includes/Helpers/I18n.php:408
+msgid "My Work"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:409
+#: includes/Helpers/I18n.php:409
+msgid "My"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:410
+#: includes/Helpers/I18n.php:410
+msgid "Today"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:411
+#: includes/Helpers/I18n.php:411
+msgid "Others Day"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:412
+#: includes/Helpers/I18n.php:412
+msgid "Items Selected"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:413
+#: includes/Helpers/I18n.php:413
+msgid "On"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:414
+#: includes/Helpers/I18n.php:414
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:415
+#: includes/Helpers/I18n.php:415
+msgid "Try Propovoice Pro!"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:416
+#: includes/Helpers/I18n.php:416
+msgid "This is pro features, To use this features you need to upgrade with Pro plugin"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:420
+#: includes/Helpers/I18n.php:420
+msgid "Contact With Us"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:421
+#: includes/Helpers/I18n.php:421
+msgid "How often?"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:422
+#: includes/Helpers/I18n.php:422
+msgid "How Many?"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:423
+#: includes/Helpers/I18n.php:423
+msgid "On going"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:424
+#: includes/Helpers/I18n.php:424
+msgid "automatically"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:425
+#: includes/Helpers/I18n.php:425
+msgid "Create Draft and send manually"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:429
+#: includes/Helpers/I18n.php:429
+msgid "Send me a copy"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:430
+#: includes/Helpers/I18n.php:430
+msgid "Limit"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:431
+#: includes/Helpers/I18n.php:431
+msgid "Times"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:432
+#: includes/Helpers/I18n.php:432
+msgid "Daily"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:433
+#: includes/Helpers/I18n.php:433
+msgid "Weekly"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:434
+#: includes/Helpers/I18n.php:434
+msgid "Monthly"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:435
+#: includes/Helpers/I18n.php:435
+msgid "Quarterly"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:436
+#: includes/Helpers/I18n.php:436
+msgid "Yearly"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:437
+#: includes/Helpers/I18n.php:437
+msgid "Half Yearly"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:438
+#: includes/Helpers/I18n.php:438
+msgid "Custom"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:439
+#: includes/Helpers/I18n.php:439
+msgid "Custom Fields"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:440
+#: includes/Helpers/I18n.php:440
+msgid "Interval In"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:441
+#: includes/Helpers/I18n.php:441
+msgid "Hour"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:442
+#: includes/Helpers/I18n.php:442
+msgid "Day"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:443
+#: includes/Helpers/I18n.php:443
+msgid "days"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:444
+#: includes/Helpers/I18n.php:444
+msgid "Week"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:445
+#: includes/Helpers/I18n.php:445
+msgid "Month"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:446
+#: includes/Helpers/I18n.php:446
+msgid "Year"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:447
+#: includes/Helpers/I18n.php:447
+msgid "Uploaded by"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:448
+#: includes/Helpers/I18n.php:448
+msgid "Please fill up necessary information in the form."
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:452
+#: includes/Helpers/I18n.php:452
+msgid "Please fill up Business info first"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:456
+#: includes/Helpers/I18n.php:456
+msgid "You need to mention bank details here, Like: Name, Routing No. etc"
+msgstr ""
+
+#. translators: %s: Module Name
+#: dist/propovoice/includes/Helpers/I18n.php:461
+#: includes/Helpers/I18n.php:461
+msgid "No %s found by your search query."
+msgstr ""
+
+#. Translators: %1$s is the name of the missing resource (e.g., course, file), %2$s is the type of resource (e.g., courses, files)
+#: dist/propovoice/includes/Helpers/I18n.php:466
+#: includes/Helpers/I18n.php:466
+msgid "Sorry! There is no available %1$s %2$s"
+msgstr ""
+
+#. translators: %s: Adding, Creating text
+#: dist/propovoice/includes/Helpers/I18n.php:471
+#: includes/Helpers/I18n.php:471
+msgid "Let's Start %s"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:472
+#: includes/Helpers/I18n.php:472
+msgid "Let's Start Adding"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:473
+#: includes/Helpers/I18n.php:473
+msgid "Let's Start Creating"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:474
+#: includes/Helpers/I18n.php:474
+msgid "Adding"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:475
+#: includes/Helpers/I18n.php:475
+msgid "Creating"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:476
+#: includes/Helpers/I18n.php:476
+msgid "added"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:477
+#: includes/Helpers/I18n.php:477
+msgid "created"
+msgstr ""
+
+#. translators: %s: Added, Created text, %s: Module Name
+#: dist/propovoice/includes/Helpers/I18n.php:479
+#: includes/Helpers/I18n.php:479
+msgid "You have not %1$s any %2$s yet."
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:480
+#: includes/Helpers/I18n.php:480
+msgid "any"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:483
+#: includes/Helpers/I18n.php:483
+msgid "Click to upload File"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:484
+#: includes/Helpers/I18n.php:484
+msgid "sample"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:485
+#: includes/Helpers/I18n.php:485
+msgid "Next [Map Columns]"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:486
+#: includes/Helpers/I18n.php:486
+msgid "Please make sure your csv file has unique headers. Otherwise, it may fail to import"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:488
+#: includes/Helpers/I18n.php:488
+msgid "Option"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:489
+#: includes/Helpers/I18n.php:489
+msgid "Option list"
+msgstr ""
+
+#: dist/propovoice/includes/Helpers/I18n.php:490
+#: includes/Helpers/I18n.php:490
+msgid "Default options"
+msgstr ""
+
+#: dist/propovoice/includes/MenuPage/Type/Dashboard.php:122
+#: includes/MenuPage/Type/Dashboard.php:122
+msgid "Go to Frontend"
+msgstr ""
+
+#: dist/propovoice/includes/MenuPage/Type/Welcome.php:22
+#: dist/propovoice/includes/MenuPage/Type/Welcome.php:23
+#: includes/MenuPage/Type/Welcome.php:22
+#: includes/MenuPage/Type/Welcome.php:23
+msgid "Propovoice Welcome"
+msgstr ""
+
+#: dist/propovoice/includes/Models/Order.php:65
+#: dist/propovoice/includes/Models/Org.php:96
+#: dist/propovoice/includes/Models/Org.php:184
+#: dist/propovoice/includes/Models/Person.php:97
+#: dist/propovoice/includes/Models/Person.php:185
+#: includes/Models/Order.php:65
+#: includes/Models/Org.php:96
+#: includes/Models/Org.php:184
+#: includes/Models/Person.php:97
+#: includes/Models/Person.php:185
+msgid "Something wrong!"
+msgstr ""
+
+#: dist/propovoice/includes/Setup/InstallCtrl.php:26
+#: includes/Setup/InstallCtrl.php:26
+msgid "Every Half Minute"
+msgstr ""
+
+#: dist/propovoice/includes/Setup/InstallCtrl.php:31
+#: includes/Setup/InstallCtrl.php:31
+msgid "Every 1 Minute"
+msgstr ""
+
+#: dist/propovoice/includes/Setup/InstallCtrl.php:115
+#: includes/Setup/InstallCtrl.php:115
+msgid "Propovoice Pro"
+msgstr ""
+
+#: dist/propovoice/includes/Setup/InstallCtrl.php:120
+#: includes/Setup/InstallCtrl.php:120
+msgid "requires Propovoice Pro version minimum 1.7.1.1, Which is currently NOT RUNNING."
+msgstr ""
+
+#: dist/propovoice/includes/Template/TemplateCtrl.php:19
+#: includes/Template/TemplateCtrl.php:19
+msgid "Propovoice Workspace"
+msgstr ""
+
+#: dist/propovoice/includes/Template/TemplateCtrl.php:23
+#: includes/Template/TemplateCtrl.php:23
+msgid "Propovoice Embedded Form"
+msgstr ""
+
+#: dist/propovoice/includes/Template/TemplateCtrl.php:32
+#: includes/Template/TemplateCtrl.php:32
+msgid "Propovoice Client Estimate"
+msgstr ""
+
+#: dist/propovoice/includes/Template/TemplateCtrl.php:36
+#: includes/Template/TemplateCtrl.php:36
+msgid "Propovoice Client Invoice"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:4
+#: view/feedback/form.php:4
+msgid "I no longer need the plugin"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:8
+#: view/feedback/form.php:8
+msgid "I found a better plugin"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:9
+#: view/feedback/form.php:9
+msgid "Please share which plugin"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:12
+#: view/feedback/form.php:12
+msgid "I couldn't get the plugin to work"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:16
+#: view/feedback/form.php:16
+msgid "It's a temporary deactivation"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:20
+#: view/feedback/form.php:20
+msgid "I have Propovoice Pro"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:22
+#: view/feedback/form.php:22
+msgid "Wait! Don't deactivate Propovoice. You have to activate both Propovoice and Propovoice Pro in order for the plugin to work."
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:25
+#: view/feedback/form.php:25
+msgid "Other"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:26
+#: view/feedback/form.php:26
+msgid "Please share the reason"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:56
+#: view/feedback/form.php:56
+msgid "Quick Feedback"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:57
+#: view/feedback/form.php:57
+msgid "If you have a moment, please share why you are deactivating Propovoice"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:116
+#: view/feedback/form.php:116
+msgid "Skip & Deactivate"
+msgstr ""
+
+#: dist/propovoice/view/feedback/form.php:120
+#: view/feedback/form.php:120
+msgid "Submit & Deactivate"
+msgstr ""
+
+#: dist/propovoice/view/template/partial/403.php:24
+#: view/template/partial/403.php:24
+msgid "Sorry!! You don't have permission to view this page"
+msgstr ""
+
+#: dist/propovoice/view/template/partial/404.php:40
+#: view/template/partial/404.php:40
+msgid "We Can't find this page you're looking for"
+msgstr ""
+
+#: dist/propovoice/view/template/partial/login.php:115
+#: view/template/partial/login.php:115
+msgid "Please enter your login credentials"
+msgstr ""
+
+#: dist/propovoice/view/template/partial/login.php:120
+#: view/template/partial/login.php:120
+msgid "Username"
+msgstr ""
+
+#: dist/propovoice/view/template/partial/login.php:122
+#: view/template/partial/login.php:122
+msgid "Remember Me"
+msgstr ""
+
+#: dist/propovoice/view/template/partial/login.php:123
+#: view/template/partial/login.php:123
+msgid "Log In"
+msgstr ""
+
+#: dist/propovoice/view/template/partial/login.php:127
+#: view/template/partial/login.php:127
+msgid "Lost your password?"
+msgstr ""
+
+#: dist/propovoice/view/template/partial/login.php:129
+#: view/template/partial/login.php:129
+msgid "You entered wrong credentials"
+msgstr ""

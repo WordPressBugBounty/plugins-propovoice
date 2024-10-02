@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpropovoice=self.webpackChunkpropovoice||[]).push([[5370],{15370:(e,n,r)=>{r.r(n),r.d(n,{default:()=>o});var t=r(67294),u=r(85893),i=(0,t.lazy)((function(){return r.e(5042).then(r.bind(r,45042))})),c=(0,t.lazy)((function(){return r.e(4940).then(r.bind(r,64940))}));function o(){return(0,u.jsxs)("div",{children:[(0,u.jsx)(i,{}),(0,u.jsx)(c,{})]})}}}]);
