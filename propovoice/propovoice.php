@@ -11,7 +11,7 @@
  * Plugin Name:       Propovoice
  * Plugin URI:        https://wordpress.org/plugins/propovoice
  * Description:       Lead, Deal, Estimate, Invoice, Billing, Client, Project Automation
- * Version:           1.7.6.4
+ * Version:           1.7.6.5
  * Author:            Propovoice
  * Author URI:        https://propovoice.com
  * Requires at least: 6.2
@@ -57,7 +57,7 @@ final class Ndpv {
      *
      * @var string
      */
-    private const VERSION = '1.7.6.4';
+    private const VERSION = '1.7.6.5';
 
     /**
      * Holds various class instances.

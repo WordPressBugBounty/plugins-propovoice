@@ -4,7 +4,7 @@ Donate link:
 Tags: Client Management, Project Management, Customer, Client, Business Management
 Requires at least: 6.2
 Tested up to: 6.5
-Stable tag: 1.7.6.4
+Stable tag: 1.7.6.5
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -20,8 +20,7 @@ Wanna scale up your freelancing and service business? Then you must give up rand
 New technologies are evolving fast in this era of digitalization and bringing big changes to the ways we work and live. Propovoice CRM changes the way you handle your Service Business. Propovoice CRM is a client relationship management solution for small to mid-level service agencies and freelancers in WordPress. It will help you manage your business process – including everything like managing leads, deals, estimates, invoicing, projects, and getting paid on time.
 
 == 🏆 Live Demo Access ==
-> URL: [Demo](https://demo.propovoice.com/wp-login.php?redirect_to=https://demo.propovoice.com/wp-admin/admin.php?page=ndpv&reauth=1)
-> Username: demo || Password: demo
+> URL: [Demo](https://demo.propovoice.com/npdv-demo-login-to-admin/)
 
 All the important features that you need to manage your service business are free in Propovoice CRM. Its intuitive design makes it easy to use.
 
@@ -153,8 +152,8 @@ The super fantastic pro features that accelerate your business growth and improv
 3. Activate `Propovoice CRM` from Plugins page
 
 = Requirements =
-* **WordPress version:** >= 5.0
-* **PHP version:** >= 7.1
+* **WordPress version:** >= 6.2
+* **PHP version:** >= 7.4
 
 == Frequently Asked Questions ==
 
@@ -179,6 +178,11 @@ The super fantastic pro features that accelerate your business growth and improv
 7. Settings
 
 == Changelog ==
+
+= 1.7.6.5 (25-Mar-2025) =
+* Fixed: Restrict login for inactive and blocked client
+* Fixed: Export problem after lead and client import
+* Fixed: Attachment validation on lead email send
 
 = 1.7.6.4 (02-Jun-2024) =
 * Fixed: Invoice payment process with token verification
