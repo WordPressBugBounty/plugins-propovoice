@@ -3,7 +3,7 @@
         'name' => 'therakib7/propovoice',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => 'c2b2bb8bfad0c7ac532f04c615708749d20b7412',
+        'reference' => '452768a3c70187c06b98dfdbd464965e81039fda',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'therakib7/propovoice' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => 'c2b2bb8bfad0c7ac532f04c615708749d20b7412',
+            'reference' => '452768a3c70187c06b98dfdbd464965e81039fda',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
