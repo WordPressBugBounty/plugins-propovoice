@@ -3,8 +3,8 @@ Contributors: Propovoice, therakib7, nasirbinburhan, prappo_p, azharibnmostafiz
 Donate link:
 Tags: Client Management, Project Management, Customer, Client, Business Management
 Requires at least: 6.2
-Tested up to: 6.7
-Stable tag: 1.7.6.6
+Tested up to: 6.8
+Stable tag: 1.7.6.7
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -179,6 +179,10 @@ The super fantastic pro features that accelerate your business growth and improv
 
 == Changelog ==
 
+= 1.7.6.7 (17-Apr-2025) =
+* Fixed: Staff team members cannot delete data.
+* Fixed: 'Lead to deals' include assigned team members.
+* Fixed: Hide the row action button if no items exist.
 
 = 1.7.6.6 (08-Apr-2025) =
 * Updated: Tested for WordPress version 6.7

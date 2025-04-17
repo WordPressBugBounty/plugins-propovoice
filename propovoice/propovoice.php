@@ -11,12 +11,12 @@
  * Plugin Name:       Propovoice
  * Plugin URI:        https://wordpress.org/plugins/propovoice
  * Description:       Lead, Deal, Estimate, Invoice, Billing, Client, Project Automation
- * Version:           1.7.6.6
+ * Version:           1.7.6.7
  * Author:            Propovoice
  * Author URI:        https://propovoice.com
  * Requires at least: 6.2
  * Requires PHP:      7.4
- * Tested up to:      6.7
+ * Tested up to:      6.8
  * Text Domain:       propovoice
  * Domain Path:       /languages
  * License:           GPL3.0

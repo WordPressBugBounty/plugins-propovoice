@@ -433,6 +433,10 @@ class Deal {
         $tags = isset( $param['tags'] )
             ? array_map( 'absint', $param['tags'] )
             : null;
+
+        $staffs = isset( $param['staffs'] )
+            ? array_map( 'absint', $param['staffs'] )
+            : null;
         $desc = isset( $param['desc'] ) ? nl2br( $param['desc'] ) : '';
         $project_req = isset( $param['project_req'] ) ? true : false;
 
@@ -576,6 +580,10 @@ class Deal {
                         update_post_meta( $post_id, $value['slug'], $field );
                     }
                 }
+
+	      if($lead_id) {
+update_post_meta($lead_id, "_ndpv_allowed_users", $staffs);
+	      }
 
                 $param['id'] = $post_id;
 

@@ -1,14 +1,14 @@
 # Copyright (c) 2025 Rakibul Hasan. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: Propovoice 1.7.6.6\n"
+"Project-Id-Version: Propovoice 1.7.6.7\n"
 "Report-Msgid-Bugs-To: https://github.com/therakib7/propovoice/issues\n"
 "Last-Translator: therakib7@gmail.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-08T15:52:26+00:00\n"
+"POT-Creation-Date: 2025-04-17T14:51:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: propovoice\n"
@@ -51,8 +51,8 @@ msgstr ""
 
 #: includes/Api/Type/Client.php:247
 #: includes/Api/Type/Client.php:406
-#: includes/Api/Type/Deal.php:443
-#: includes/Api/Type/Deal.php:656
+#: includes/Api/Type/Deal.php:447
+#: includes/Api/Type/Deal.php:664
 #: includes/Api/Type/Lead.php:361
 #: includes/Api/Type/Lead.php:510
 #: includes/Api/Type/Project.php:570
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Section is missing"
 msgstr ""
 
-#: includes/Api/Type/Deal.php:468
+#: includes/Api/Type/Deal.php:472
 msgid "Please select a stage"
 msgstr ""
 
