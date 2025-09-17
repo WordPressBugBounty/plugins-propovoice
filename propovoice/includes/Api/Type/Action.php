@@ -7,66 +7,77 @@ use Ndpv\Traits\Singleton;
 
 class Action {
 
+
     use Singleton;
 
     public function routes() {
         register_rest_route(
-            'ndpv/v1', '/actions' . ndpv()->plain_route(), [
-				'methods' => 'GET',
-				'callback' => [ $this, 'get' ],
-				'permission_callback' => [ $this, 'get_per' ],
-			]
+            'ndpv/v1',
+            '/actions' . ndpv()->plain_route(),
+            [
+                'methods' => 'GET',
+                'callback' => [ $this, 'get' ],
+                'permission_callback' => [ $this, 'get_per' ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/actions', [
-				'methods' => 'POST',
-				'callback' => [ $this, 'create' ],
-				'permission_callback' => [ $this, 'create_per' ],
-			]
+            'ndpv/v1',
+            '/actions',
+            [
+                'methods' => 'POST',
+                'callback' => [ $this, 'create' ],
+                'permission_callback' => [ $this, 'create_per' ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/actions/(?P<id>\d+)', [
-				'methods' => 'GET',
-				'callback' => [ $this, 'get_single' ],
-				'permission_callback' => [ $this, 'get_per' ],
-				'args' => [
-					'id' => [
-						'validate_callback' => function ( $param ) {
-							return is_numeric( $param );
-						},
-					],
-				],
-			]
+            'ndpv/v1',
+            '/actions/(?P<id>\d+)',
+            [
+                'methods' => 'GET',
+                'callback' => [ $this, 'get_single' ],
+                'permission_callback' => [ $this, 'get_per' ],
+                'args' => [
+                    'id' => [
+                        'validate_callback' => function ( $param ) {
+                            return is_numeric( $param );
+                        },
+                    ],
+                ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/actions/(?P<id>[^/]+)', [
-				'methods' => 'PUT',
-				'callback' => [ $this, 'update' ],
-				'permission_callback' => [ $this, 'update_per' ],
-				'args' => [
-					'id' => [
-						'validate_callback' => function ( $param ) {
-							return is_numeric( $param );
-						},
-					],
-				],
-			]
+            'ndpv/v1',
+            '/actions/(?P<id>[^/]+)',
+            [
+                'methods' => 'PUT',
+                'callback' => [ $this, 'update' ],
+                'permission_callback' => [ $this, 'update_per' ],
+                'args' => [
+                    'id' => [
+                        'validate_callback' => function ( $param ) {
+                            return is_numeric( $param );
+                        },
+                    ],
+                ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/actions/(?P<id>[0-9,]+)', [
-				'methods' => 'DELETE',
-				'callback' => [ $this, 'delete' ],
-				'permission_callback' => [ $this, 'del_per' ],
-				'args' => [
-					'id' => [
-						'sanitize_callback' => 'sanitize_text_field',
-					],
-				],
-			]
+            'ndpv/v1',
+            '/actions/(?P<id>[0-9,]+)',
+            [
+                'methods' => 'DELETE',
+                'callback' => [ $this, 'delete' ],
+                'permission_callback' => [ $this, 'del_per' ],
+                'args' => [
+                    'id' => [
+                        'sanitize_callback' => 'sanitize_text_field',
+                    ],
+                ],
+            ]
         );
     }
 
@@ -88,96 +99,219 @@ class Action {
         $param = $req->get_params();
         $reg_errors = new \WP_Error();
 
-        // modified for multiple id support
-        $str_id = isset( $param['id'] ) ? $param['id'] : null;
-        $type = isset( $param['type'] )
-            ? sanitize_text_field( $param['type'] )
-            : null;
+        // Support multiple IDs separated by commas
+        $str_id = $param['id'] ?? null;
+        $type = isset( $param['type'] ) ? sanitize_text_field( $param['type'] ) : null;
+
+        if ( empty( $str_id ) || empty( $type ) ) {
+            $reg_errors->add(
+                'id_type_field',
+                esc_html__( 'Required field is missing', 'propovoice' )
+            );
+            wp_send_json_error( $reg_errors->get_error_messages() );
+        }
 
         $ids = explode( ',', $str_id );
+        $new_post_ids = [];
 
         foreach ( $ids as $id ) {
             $id = (int) $id;
 
-            if ( empty( $id ) || empty( $type ) ) {
+            if ( empty( $id ) ) {
                 $reg_errors->add(
-                    'id_type_field',
-                    esc_html__( 'Required field is missing', 'propovoice' )
+                    'invalid_id',
+                    esc_html__( 'Invalid ID provided', 'propovoice' )
                 );
+                continue; // skip invalid ID
             }
 
-            if ( $reg_errors->get_error_messages() ) {
-                wp_send_json_error( $reg_errors->get_error_messages() );
-            } else {
-                $title = get_the_title( $id );
-                $oldpost = get_post( $id );
-                $post = [
-                    'post_title' => $title,
-                    'post_status' => 'publish',
-                    'post_type' => $oldpost->post_type,
-                    'post_author' => get_current_user_id(),
-                ];
-                $new_post_id = wp_insert_post( $post );
+            $title = get_the_title( $id );
+            $oldpost = get_post( $id );
 
-                // Copy post metadata
+            if ( ! $oldpost ) {
+                $reg_errors->add(
+                    'post_not_found',
+                    sprintf(
+                        /* translators: %d: Post ID */
+                        esc_html__( 'Post with ID %d not found', 'propovoice' ),
+                        $id )
+                );
+                continue;
+            }
 
-                $data = get_post_meta( $id );
+            $post = [
+                'post_title'  => $title,
+                'post_status' => 'publish',
+                'post_type'   => $oldpost->post_type,
+                'post_author' => get_current_user_id(),
+            ];
 
-                //auto number
-                $auto_id = '';
-                $path = get_post_meta( $id, 'path', true );
-                if ( $type === 'copy-to-inv' ) {
-                    $path = 'invoice';
-                }
-                $prefix = get_option( 'ndpv_' . $path . '_general' );
-                if ( $prefix ) {
-                    $prefix = $prefix['prefix'];
-                } else {
-                    $prefix = ( $path === 'invoice' ) ? 'Inv-' : 'Est-';
-                }
-                $auto_id = $prefix . Fns::auto_id( $path );
+            $new_post_id = wp_insert_post( $post );
 
-                foreach ( $data as $key => $values ) {
-                    foreach ( $values as $value ) {
-                        if ( $key === 'status' ) {
-                            $value = 'draft';
+            if ( is_wp_error( $new_post_id ) ) {
+                $reg_errors->add(
+                    'insert_failed',
+                    sprintf(
+                        /* translators: %d: Post ID */
+                        esc_html__( 'Failed to insert post for ID %d', 'propovoice' ),
+                        $id )
+                );
+                continue;
+            }
+
+            // Copy post metadata
+            $data = get_post_meta( $id );
+
+            // Exclude payment info and paid fields when duplicating invoice
+            if ( $type === 'copy' ) {
+                unset( $data['payment_info'], $data['paid'] );
+            }
+
+            // Auto numbering
+            $path = get_post_meta( $id, 'path', true );
+            if ( $type === 'copy-to-inv' ) {
+                $path = 'invoice';
+            }
+
+            $prefix_option = get_option( 'ndpv_' . $path . '_general' );
+            $prefix = $prefix_option['prefix'] ?? ( ( $path === 'invoice' ) ? 'Inv-' : 'Est-' );
+
+            $auto_id = $prefix . Fns::auto_id( $path );
+
+            foreach ( $data as $key => $values ) {
+                foreach ( $values as $value ) {
+                    // Override specific meta values based on key and type
+                    if ( $key === 'status' ) {
+                        $value = 'draft';
+                    } elseif ( $key === 'path' && $type === 'copy-to-inv' ) {
+                        $value = 'invoice';
+                    } elseif ( $key === 'num' ) {
+                        $value = $auto_id;
+                    } elseif ( $key === 'invoice' ) {
+                        $value = maybe_unserialize( $value );
+                        $value['id'] = $new_post_id;
+                        $value['num'] = $auto_id;
+                        if ( $type === 'copy-to-inv' ) {
+                            $value['path'] = 'invoice';
                         }
-
-                        if ( $key === 'path' && $type === 'copy-to-inv' ) {
-                            $value = 'invoice';
-                        }
-
-                        if ( $key === 'num' ) {
-                            $value = $auto_id;
-                        }
-
-                        if ( $key === 'invoice' ) { //key name invoice, but estimate and invoice stored here in obj
-                            $value = maybe_unserialize( $value );
-
-                            $value['id'] = $new_post_id;
-                            $value['num'] = $auto_id;
-
-                            if ( $type === 'copy-to-inv' ) {
-                                $value['path'] = 'invoice';
-                            }
-                        }
-
-                        add_post_meta(
-                            $new_post_id,
-                            $key,
-                            maybe_unserialize( $value )
-                        );
                     }
+
+                    add_post_meta( $new_post_id, $key, maybe_unserialize( $value ) );
                 }
             }
+
+            $new_post_ids[] = $new_post_id;
         }
 
-        if ( ! is_wp_error( $new_post_id ) ) {
-            wp_send_json_success( $new_post_id );
+        if ( ! empty( $new_post_ids ) ) {
+            wp_send_json_success( $new_post_ids );
         } else {
-            wp_send_json_error();
+            wp_send_json_error( $reg_errors->get_error_messages() ?: 'No posts duplicated.' );
         }
     }
+
+
+    // public function create($req)
+    // {
+    //     $param = $req->get_params();
+    //     $reg_errors = new \WP_Error();
+
+    //     // modified for multiple id support
+    //     $str_id = isset($param['id']) ? $param['id'] : null;
+    //     $type = isset($param['type'])
+    //         ? sanitize_text_field($param['type'])
+    //         : null;
+
+    //     $ids = explode(',', $str_id);
+
+    //     foreach ($ids as $id) {
+    //         $id = (int) $id;
+
+    //         if (empty($id) || empty($type)) {
+    //             $reg_errors->add(
+    //                 'id_type_field',
+    //                 esc_html__('Required field is missing', 'propovoice')
+    //             );
+    //         }
+
+    //         if ($reg_errors->get_error_messages()) {
+    //             wp_send_json_error($reg_errors->get_error_messages());
+    //         } else {
+    //             $title = get_the_title($id);
+    //             $oldpost = get_post($id);
+    //             $post = [
+    //                 'post_title' => $title,
+    //                 'post_status' => 'publish',
+    //                 'post_type' => $oldpost->post_type,
+    //                 'post_author' => get_current_user_id(),
+    //             ];
+    //             $new_post_id = wp_insert_post($post);
+
+    //             // Copy post metadata
+
+    //             $data = get_post_meta($id);
+
+    //             // Exclude payment info and paid when duplicating invoice
+    //             if ($type == 'copy') {
+    //                 unset($data['payment_info']);
+    //                 unset($data['paid']);
+    //             }
+
+    //             //auto number
+    //             $auto_id = '';
+    //             $path = get_post_meta($id, 'path', true);
+    //             if ($type === 'copy-to-inv') {
+    //                 $path = 'invoice';
+    //             }
+    //             $prefix = get_option('ndpv_' . $path . '_general');
+    //             if ($prefix) {
+    //                 $prefix = $prefix['prefix'];
+    //             } else {
+    //                 $prefix = ($path === 'invoice') ? 'Inv-' : 'Est-';
+    //             }
+    //             $auto_id = $prefix . Fns::auto_id($path);
+
+    //             foreach ($data as $key => $values) {
+    //                 foreach ($values as $value) {
+    //                     if ($key === 'status') {
+    //                         $value = 'draft';
+    //                     }
+
+    //                     if ($key === 'path' && $type === 'copy-to-inv') {
+    //                         $value = 'invoice';
+    //                     }
+
+    //                     if ($key === 'num') {
+    //                         $value = $auto_id;
+    //                     }
+
+    //                     if ($key === 'invoice') { //key name invoice, but estimate and invoice stored here in obj
+    //                         $value = maybe_unserialize($value);
+
+    //                         $value['id'] = $new_post_id;
+    //                         $value['num'] = $auto_id;
+
+    //                         if ($type === 'copy-to-inv') {
+    //                             $value['path'] = 'invoice';
+    //                         }
+    //                     }
+
+    //                     add_post_meta(
+    //                         $new_post_id,
+    //                         $key,
+    //                         maybe_unserialize($value)
+    //                     );
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     if (! is_wp_error($new_post_id)) {
+    //         wp_send_json_success($new_post_id);
+    //     } else {
+    //         wp_send_json_error();
+    //     }
+    // }
 
     public function update( $req ) {
         $param = $req->get_params();

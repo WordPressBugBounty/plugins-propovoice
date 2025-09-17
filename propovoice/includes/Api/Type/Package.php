@@ -11,69 +11,79 @@ class Package {
 
     public function routes() {
         register_rest_route(
-            'ndpv/v1', '/packages/(?P<id>\d+)', [
-				'methods' => 'GET',
-				'callback' => [ $this, 'get_single' ],
-				'permission_callback' => [ $this, 'get_per_single' ],
-				'args' => [
-					'id' => [
-						'validate_callback' => function ( $param ) {
-							return is_numeric( $param );
-						},
-					],
-				],
-			]
+            'ndpv/v1',
+            '/packages/(?P<id>\d+)',
+            [
+                'methods' => 'GET',
+                'callback' => [ $this, 'get_single' ],
+                'permission_callback' => [ $this, 'get_per_single' ],
+                'args' => [
+                    'id' => [
+                        'validate_callback' => function ( $param ) {
+                            return is_numeric( $param );
+                        },
+                    ],
+                ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/packages' . ndpv()->plain_route(), [
-				'methods' => 'GET',
-				'callback' => [ $this, 'get' ],
-				'permission_callback' => [ $this, 'get_per' ],
-			]
+            'ndpv/v1',
+            '/packages' . ndpv()->plain_route(),
+            [
+                'methods' => 'GET',
+                'callback' => [ $this, 'get' ],
+                'permission_callback' => [ $this, 'get_per' ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/packages', [
-				'methods' => 'POST',
-				'callback' => [ $this, 'create' ],
-				'permission_callback' => [ $this, 'create_per' ],
-			]
+            'ndpv/v1',
+            '/packages',
+            [
+                'methods' => 'POST',
+                'callback' => [ $this, 'create' ],
+                'permission_callback' => [ $this, 'create_per' ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/packages/(?P<id>\d+)', [
-				'methods' => 'PUT',
-				'callback' => [ $this, 'update' ],
-				'permission_callback' => [ $this, 'update_per' ],
-				'args' => [
-					'id' => [
-						'validate_callback' => function ( $param ) {
-							return is_numeric( $param );
-						},
-					],
-				],
-			]
+            'ndpv/v1',
+            '/packages/(?P<id>\d+)',
+            [
+                'methods' => 'PUT',
+                'callback' => [ $this, 'update' ],
+                'permission_callback' => [ $this, 'update_per' ],
+                'args' => [
+                    'id' => [
+                        'validate_callback' => function ( $param ) {
+                            return is_numeric( $param );
+                        },
+                    ],
+                ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/packages/(?P<id>[0-9,]+)', [
-				'methods' => 'DELETE',
-				'callback' => [ $this, 'delete' ],
-				'permission_callback' => [ $this, 'del_per' ],
-				'args' => [
-					'id' => [
-						'sanitize_callback' => 'sanitize_text_field',
-					],
-				],
-			]
+            'ndpv/v1',
+            '/packages/(?P<id>[0-9,]+)',
+            [
+                'methods' => 'DELETE',
+                'callback' => [ $this, 'delete' ],
+                'permission_callback' => [ $this, 'del_per' ],
+                'args' => [
+                    'id' => [
+                        'sanitize_callback' => 'sanitize_text_field',
+                    ],
+                ],
+            ]
         );
     }
 
     public function get( $req ) {
 
         $param = $req->get_params();
-        //this is the short solution to fix plain permalink issue
+        // this is the short solution to fix plain permalink issue
         $permalink_structure = get_option( 'permalink_structure' );
         if ( $permalink_structure === '' && isset( $param['token'] ) ) {
             $text = isset( $param['args'] ) ? $param['args'] : '';
@@ -83,6 +93,7 @@ class Package {
                 $req->set_url_params( [ 'id' => $matches[0] ] );
                 $this->get_single( $req );
             }
+
             return;
         }
 
@@ -142,6 +153,7 @@ class Package {
             $query_data['desc'] = get_post_field( 'post_content', $id );
             $query_data['currency'] = isset( $package_meta['currency'] ) ? $package_meta['currency'][0] : '';
             $query_data['price'] = isset( $package_meta['price'] ) ? $package_meta['price'][0] : '';
+            $query_data['token'] = isset( $package_meta['token'] ) ? $package_meta['token'][0] : '';
             $query_data['is_recurring'] = isset( $package_meta['is_recurring'] ) ? $package_meta['is_recurring'][0] : false;
 
             $query_data['status_id'] = '';
@@ -202,7 +214,7 @@ class Package {
         if ( $id ) {
             $query_data['id'] = $id;
 
-            //edit
+            // edit
             $package['id'] = $id;
 
             $package_meta = get_post_meta( $id );
@@ -363,52 +375,108 @@ class Package {
     public function create( $req ) {
         $param = $req->get_params();
         $reg_errors = new \WP_Error();
+
+        // Sanitize and extract fields
         $is_recurring = isset( $param['is_recurring'] ) ? rest_sanitize_boolean( $param['is_recurring'] ) : false;
 
+        // Validate required fields (if any; currently none)
         if ( $reg_errors->get_error_messages() ) {
             wp_send_json_error( $reg_errors->get_error_messages() );
-        } else {
-            //TODO: give proper title
-            $title = '';
-            $data = [
-                'post_type' => 'ndpv_package',
-                'post_title' => $title,
-                'post_status' => 'publish',
-                'post_author' => get_current_user_id(),
-            ];
-            $post_id = wp_insert_post( $data );
 
-            if ( ! is_wp_error( $post_id ) ) {
-                update_post_meta( $post_id, 'ws_id', ndpv()->get_workspace() );
-
-                update_post_meta( $post_id, 'is_recurring', $is_recurring );
-
-                $term_id = Fns::get_term_id_by_type( 'package_status', 'draft' );
-                if ( $term_id ) {
-                    wp_set_post_terms(
-                        $post_id,
-                        [ $term_id ],
-                        'ndpv_package_status'
-                    );
-                }
-
-                //generate secret token
-                $bytes = random_bytes( 20 );
-                $token = bin2hex( $bytes );
-                update_post_meta( $post_id, 'token', $token );
-
-                // do_action("ndpvp_webhook", $hook . "_add", $param);
-
-                wp_send_json_success(
-                    [
-						'id' => $post_id,
-					]
-                );
-            } else {
-                wp_send_json_error();
-            }
+            return;
         }
+
+        // Prepare post data
+        $post_id = wp_insert_post(
+            [
+				'post_type' => 'ndpv_package',
+				'post_title' => '', // TODO: Add dynamic or meaningful title
+				'post_status' => 'publish',
+				'post_author' => get_current_user_id(),
+			]
+        );
+
+        if ( is_wp_error( $post_id ) ) {
+            wp_send_json_error();
+
+            return;
+        }
+
+        // Update meta fields
+        update_post_meta( $post_id, 'ws_id', ndpv()->get_workspace() );
+        update_post_meta( $post_id, 'is_recurring', $is_recurring );
+
+        // Set default taxonomy term: 'draft'
+        $term_id = Fns::get_term_id_by_type( 'package_status', 'draft' );
+        if ( $term_id ) {
+            wp_set_post_terms( $post_id, [ $term_id ], 'ndpv_package_status' );
+        }
+
+        // Generate and store secure token
+        $token = bin2hex( random_bytes( 20 ) );
+        update_post_meta( $post_id, 'token', $token );
+
+        // Optional: trigger a webhook if needed
+        // do_action("ndpvp_webhook", 'package_add', $param);
+
+        // Return success response
+        wp_send_json_success(
+            [
+				'id' => $post_id,
+            // 'token' => $token, // Include if needed
+			]
+        );
     }
+
+    // public function create( $req ) {
+    //     $param = $req->get_params();
+    //     $reg_errors = new \WP_Error();
+    //     $is_recurring = isset( $param['is_recurring'] ) ? rest_sanitize_boolean( $param['is_recurring'] ) : false;
+
+    //     if ( $reg_errors->get_error_messages() ) {
+    //         wp_send_json_error( $reg_errors->get_error_messages() );
+    //     } else {
+    //         //TODO: give proper title
+    //         $title = '';
+    //         $data = [
+    //             'post_type' => 'ndpv_package',
+    //             'post_title' => $title,
+    //             'post_status' => 'publish',
+    //             'post_author' => get_current_user_id(),
+    //         ];
+    //         $post_id = wp_insert_post( $data );
+
+    //         if ( ! is_wp_error( $post_id ) ) {
+    //             update_post_meta( $post_id, 'ws_id', ndpv()->get_workspace() );
+
+    //             update_post_meta( $post_id, 'is_recurring', $is_recurring );
+
+    //             $term_id = Fns::get_term_id_by_type( 'package_status', 'draft' );
+    //             if ( $term_id ) {
+    //                 wp_set_post_terms(
+    //                     $post_id,
+    //                     [ $term_id ],
+    //                     'ndpv_package_status'
+    //                 );
+    //             }
+
+    //             //generate secret token
+    //             $bytes = random_bytes( 20 );
+    //             $token = bin2hex( $bytes );
+    //             update_post_meta( $post_id, 'token', $token );
+
+    //             // do_action("ndpvp_webhook", $hook . "_add", $param);
+
+    //             wp_send_json_success(
+    //                 [
+    //                  'id' => $post_id,
+    //              ]
+    //             );
+    //         } else {
+    //             wp_send_json_error();
+    //         }
+    //     }
+    // }
 
     public function update( $req ) {
         $param = $req->get_params();

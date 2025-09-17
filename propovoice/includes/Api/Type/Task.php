@@ -112,7 +112,7 @@ class Task {
         ];
 
         if ( $tab_id ) {
-            $args['meta_query'][] = [ 
+            $args['meta_query'][] = [
                 [
                     'key' => 'tab_id',
                     'value' => $tab_id,

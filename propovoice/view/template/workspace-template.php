@@ -53,16 +53,16 @@ add_action( 'wp_enqueue_scripts', [ Style::init(), 'clear_styles_and_scripts' ],
         $core_access = apply_filters( 'ndpv_admin', current_user_can( 'ndpv_core' ) );
         $client_portal = true;
         $user_id = get_current_user_id();
-        $client_id = get_user_meta($user_id, "ndpv_client_id", true);
-        $client_status = get_the_terms((int)$client_id, "ndpv_contact_status");
+        $client_id = get_user_meta( $user_id, 'ndpv_client_id', true );
+        $client_status = get_the_terms( (int) $client_id, 'ndpv_contact_status' );
 
-        if (is_array($client_status) && isset($client_status[0]) && 
-	     in_array($client_status[0]->slug, ['inactive', 'block'])) {
+        if ( is_array( $client_status ) && isset( $client_status[0] ) &&
+		in_array( $client_status[0]->slug, [ 'inactive', 'block' ] ) ) {
             $client_portal = false;
         }
 
         if ( current_user_can( 'ndpv_client_role' ) && ! get_user_meta( $user_id, 'ndpv_client_portal', true ) &&
-	     ! is_admin() && ! is_super_admin() ) {
+		! is_admin() && ! is_super_admin() ) {
             $client_portal = false;
         }
 

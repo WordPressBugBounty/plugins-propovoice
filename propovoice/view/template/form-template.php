@@ -34,7 +34,7 @@ function propovoice_render_form( $get ) {
 </head>
 
 <body>
-    <?php echo esc_html(propovoice_render_form( $_GET )); // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
+    <?php echo esc_html( propovoice_render_form( $_GET ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
 
     <div style="display: none;"><?php wp_footer(); ?></div>
 </body>

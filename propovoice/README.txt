@@ -4,7 +4,7 @@ Donate link:
 Tags: Client Management, Project Management, Customer, Client, Business Management
 Requires at least: 6.2
 Tested up to: 6.8
-Stable tag: 1.7.6.7
+Stable tag: 1.7.8
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -178,6 +178,17 @@ The super fantastic pro features that accelerate your business growth and improv
 7. Settings
 
 == Changelog ==
+
+= 1.7.8 (15-Sep-2025) =
+* Fix: White page on new invoice creation
+
+= 1.7.7 (15-Sep-2025) =
+* Fix: Some security issues
+* Fix: PHPCS warnings
+
+= 1.7.6.8 (13-May-2025) =
+* Feature: Enhance invoice and estimate signature with drawing and typing features
+* Updated: License activation
 
 = 1.7.6.7 (17-Apr-2025) =
 * Fixed: Staff team members cannot delete data.

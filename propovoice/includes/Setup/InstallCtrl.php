@@ -132,12 +132,12 @@ class InstallCtrl {
                     <p><strong>%6$s</strong> %3$s</p>
                     <p><a class="button button-primary" href="%4$s">%5$s %2$s</a></p>
                 </div>',
-                            esc_html($class),
-                            esc_html($pro_name),
-                            esc_html($message),
-                            esc_html($url),
-                            esc_html($button_text),
-                            esc_html($free_name)
+                            esc_html( $class ),
+                            esc_html( $pro_name ),
+                            esc_html( $message ),
+                            esc_html( $url ),
+                            esc_html( $button_text ),
+                            esc_html( $free_name )
                         );
                     }
                 );

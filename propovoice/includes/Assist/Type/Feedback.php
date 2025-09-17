@@ -18,13 +18,18 @@ class Feedback {
      * @since 1.0.0
      */
     public function deactivate() {
-        if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], '_ndpv_deactivate_nonce' ) ) {
-            wp_send_json_error();
-        }
+// Unsplash and sanitize POST inputs
+$nonce        = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+$reason_key   = isset( $_POST['reason_key'] ) ? sanitize_text_field( wp_unslash( $_POST['reason_key'] ) ) : '';
+$reason       = isset( $_POST['reason'] ) ? sanitize_text_field( wp_unslash( $_POST['reason'] ) ) : '';
+$data_collect = isset( $_POST['data_collect'] ) ? sanitize_text_field( wp_unslash( $_POST['data_collect'] ) ) : '';
 
-        $reason_key = isset( $_POST['reason_key'] ) ? sanitize_text_field( $_POST['reason_key'] ) : '';
-        $reason = isset( $_POST['reason'] ) ? sanitize_text_field( $_POST['reason'] ) : '';
-        $data_collect = isset( $_POST['data_collect'] ) ? sanitize_text_field( $_POST['data_collect'] ) : '';
+// Verify nonce
+if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, '_ndpv_deactivate_nonce' ) ) {
+    wp_send_json_error();
+    wp_die(); // optional: terminate immediately
+}
+
 
         $data = [];
         if ( $data_collect ) {

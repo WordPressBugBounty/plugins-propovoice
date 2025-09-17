@@ -13,7 +13,7 @@ class I18n {
 
     public static function dashboard() {
         return [
-            //modules
+            // modules
             'db' => esc_html__( 'Dashboard', 'propovoice' ),
             'lead' => esc_html__( 'Lead', 'propovoice' ),
             'deal' => esc_html__( 'Deal', 'propovoice' ),
@@ -31,14 +31,14 @@ class I18n {
             'workflow' => esc_html__( 'Workflow', 'propovoice' ),
             'create_workflow' => esc_html__( 'Create Workflow', 'propovoice' ),
             'back' => esc_html__( 'Back', 'propovoice' ),
-            //section
+            // section
             'crm' => esc_html__( 'CRM', 'propovoice' ),
             'collaboration' => esc_html__( 'Collaboration', 'propovoice' ),
             'service' => esc_html__( 'Service', 'propovoice' ),
             'servicePackCO' => esc_html__( 'Service Package Checkout', 'propovoice' ),
             'services' => esc_html__( 'Services', 'propovoice' ),
             'others' => esc_html__( 'Others', 'propovoice' ),
-            //alert
+            // alert
             'scf' => esc_html__( 'Successfully', 'propovoice' ),
             'aAdd' => esc_html__( 'Successfully Added', 'propovoice' ),
             'aUpd' => esc_html__( 'Successfully Updated', 'propovoice' ),
@@ -52,7 +52,7 @@ class I18n {
             'receiver_missing' => esc_html__( 'Receiver is missing', 'propovoice' ),
             'cc' => esc_html__( 'Copied', 'propovoice' ),
             'conV' => esc_html__( 'convert', 'propovoice' ),
-            //dashboard
+            // dashboard
             'ov' => esc_html__( 'Overview', 'propovoice' ),
             'total_client' => esc_html__( 'Total Client', 'propovoice' ),
             'total_clients' => esc_html__( 'Total Clients', 'propovoice' ),
@@ -71,11 +71,11 @@ class I18n {
             'trk' => esc_html__( 'Tracking', 'propovoice' ),
             'notif' => esc_html__( 'Notifications', 'propovoice' ),
             'unread' => esc_html__( 'Unread', 'propovoice' ),
-            //lead
+            // lead
             'level' => esc_html__( 'Level', 'propovoice' ),
             'ct_img' => esc_html__( 'Contact Image', 'propovoice' ),
             'source' => esc_html__( 'Source', 'propovoice' ),
-            //deal
+            // deal
             'deal_pipeline' => esc_html__( 'Deal Pipeline', 'propovoice' ),
             'deal_funnel' => esc_html__( 'Deal Funnel', 'propovoice' ),
             'deal_won' => esc_html__( 'Deal Won', 'propovoice' ),
@@ -88,7 +88,7 @@ class I18n {
             'won' => esc_html__( 'Won', 'propovoice' ),
             'lost' => esc_html__( 'Lost', 'propovoice' ),
             'proba' => esc_html__( 'Probability', 'propovoice' ),
-            //estinv
+            // estinv
             'nd' => __( '&', 'propovoice' ),
             'est_num' => esc_html__( 'Estimate Number', 'propovoice' ),
             'est_date' => esc_html__( 'Estimate Date', 'propovoice' ),
@@ -142,7 +142,11 @@ class I18n {
             'addiFee' => esc_html__( 'Additional Fee', 'propovoice' ),
             'staff' => esc_html__( 'Staff', 'propovoice' ),
             'termCondition' => __( 'Terms & Conditions', 'propovoice' ),
-            //package
+            'allow_partial_payment' => __( 'Allow partial payment', 'propovoice' ),
+            'partial_payment_type' => __( 'Partial payment type', 'propovoice' ),
+            'partial_payment_amount' => __( 'Partial payment amount', 'propovoice' ),
+
+            // package
             'createPackage' => esc_html__( 'Create Package', 'propovoice' ),
             'packageType' => esc_html__( 'Package Type', 'propovoice' ),
             'packageStatus' => esc_html__( 'Package Status', 'propovoice' ),
@@ -151,19 +155,19 @@ class I18n {
             'packageReqLimit' => esc_html__( 'Project request limit', 'propovoice' ),
             'packageReqLimitInA' => esc_html__( 'Project request in a', 'propovoice' ),
             'packageReqLimitAtA' => esc_html__( 'Project request at a time', 'propovoice' ),
-            //order
+            // order
             'order' => esc_html__( 'Order', 'propovoice' ),
             'orderStatus' => esc_html__( 'Order Status', 'propovoice' ),
-            //request
-            //Client
+            // request
+            // Client
             'add_Client' => esc_html__( 'Add Client', 'propovoice' ),
-            //project
+            // project
             'add_Project' => esc_html__( 'Add Project', 'propovoice' ),
             'cur' => esc_html__( 'Currency', 'propovoice' ),
             'budget' => esc_html__( 'Budget', 'propovoice' ),
             'price' => esc_html__( 'Price', 'propovoice' ),
             'pricing' => esc_html__( 'Pricing', 'propovoice' ),
-            //contact
+            // contact
             'add_Person' => esc_html__( 'Add Person', 'propovoice' ),
             'add_Organization' => esc_html__( 'Add Organization', 'propovoice' ),
             'book' => esc_html__( 'Book', 'propovoice' ),
@@ -179,7 +183,7 @@ class I18n {
             'state_region' => esc_html__( 'State / Province / Region', 'propovoice' ),
             'city' => esc_html__( 'City', 'propovoice' ),
             'zip' => esc_html__( 'ZIP Code', 'propovoice' ),
-            //common
+            // common
             'home' => esc_html__( 'Home', 'propovoice' ),
             'total' => esc_html__( 'Total', 'propovoice' ),
             'prv' => esc_html__( 'Preview', 'propovoice' ),
@@ -188,12 +192,12 @@ class I18n {
             'full_prv' => esc_html__( 'Full Preview', 'propovoice' ),
             'template_prv' => esc_html__( 'Template Preview', 'propovoice' ),
             'aut' => esc_html__( 'Author', 'propovoice' ),
-            //invoice
+            // invoice
             'bill' => esc_html__( 'Bill', 'propovoice' ),
             'billTo' => esc_html__( 'Bill To', 'propovoice' ),
             'info' => esc_html__( 'Info', 'propovoice' ),
             'no' => esc_html__( 'No', 'propovoice' ),
-            //discussion
+            // discussion
             'add_checklist' => esc_html__( 'Add Checklist', 'propovoice' ),
             'task_done_out' => esc_html__( 'task done out of', 'propovoice' ),
             'comment' => esc_html__( 'Comment', 'propovoice' ),
@@ -204,13 +208,13 @@ class I18n {
             'write_comment' => esc_html__( 'Write your comment', 'propovoice' ),
             'task_creator' => esc_html__( 'Task Creator', 'propovoice' ),
             'no_comment' => esc_html__( 'This is no comment', 'propovoice' ),
-            //client portal
+            // client portal
             'tbl_view' => esc_html__( 'Table View', 'propovoice' ),
             'req_project' => esc_html__( 'Requested Project', 'propovoice' ),
             'board_view' => esc_html__( 'Board View', 'propovoice' ),
             'no_req_project' => __( "You don't have any Requested Project", 'propovoice' ),
             'no_project' => __( "You don't have any Project", 'propovoice' ),
-            //table
+            // table
             'status' => esc_html__( 'Status', 'propovoice' ),
             'created_at' => esc_html__( 'Created At', 'propovoice' ),
             'date' => esc_html__( 'Date', 'propovoice' ),
@@ -230,7 +234,7 @@ class I18n {
             'reqStatus' => esc_html__( 'Request Status', 'propovoice' ),
             'reqForm' => esc_html__( 'Request Form', 'propovoice' ),
             'portal_access' => esc_html__( 'Portal Access', 'propovoice' ),
-            //form
+            // form
             /* translators: %s: Add, Edit %s: Module Name */
             'formDesc' => esc_html__( '%1$s %2$s here', 'propovoice' ),
             'payDesc' => esc_html__( 'Add payment info here', 'propovoice' ),
@@ -282,14 +286,14 @@ class I18n {
             'dtl' => esc_html__( 'Details', 'propovoice' ),
             'cat' => esc_html__( 'Category', 'propovoice' ),
             'assign' => esc_html__( 'Assign', 'propovoice' ),
-            //btn
+            // btn
             'logo' => esc_html__( 'Logo', 'propovoice' ),
             'cont' => esc_html__( 'Continue', 'propovoice' ),
             'save' => esc_html__( 'Save', 'propovoice' ),
             'save_n_con' => __( 'Save & Continue', 'propovoice' ),
             'copy_form_code' => esc_html__( 'Copy Embedded Code', 'propovoice' ),
             'close' => esc_html__( 'Close', 'propovoice' ),
-            //settings
+            // settings
             'cmn' => esc_html__( 'Common', 'propovoice' ),
             'settings' => esc_html__( 'Settings', 'propovoice' ),
             'pre' => esc_html__( 'Prefix', 'propovoice' ),
@@ -331,7 +335,7 @@ class I18n {
             'paidreqDes' => esc_html__( 'You have submitted your payment information. it will take a while to approve the payment', 'propovoice' ),
             'appp' => esc_html__( 'Approval Pending', 'propovoice' ),
 
-            //ext
+            // ext
             'pipeline' => esc_html__( 'Pipeline', 'propovoice' ),
             'back_t_db' => esc_html__( 'Back to WP Dashboard', 'propovoice' ),
             'mark' => esc_html__( 'Mark as', 'propovoice' ),

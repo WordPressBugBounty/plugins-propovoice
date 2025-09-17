@@ -50,7 +50,7 @@ class Controller {
      * @since 1.0.0
      */
     protected $class_map;
-  private array $controllers = [];
+	private array $controllers = [];
 
 	public function __construct() {
 
@@ -114,9 +114,9 @@ class Controller {
             // $this->$controller = new $controller();
             // $this->$controller->routes();
 
-          $controller_instance = new $controller_class();
-          $this->controllers[$controller_class] = $controller_instance;
-          $controller_instance->routes();
+			$controller_instance = new $controller_class();
+			$this->controllers[ $controller_class ] = $controller_instance;
+			$controller_instance->routes();
         }
     }
 	/**

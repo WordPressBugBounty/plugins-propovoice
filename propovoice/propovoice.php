@@ -1,17 +1,19 @@
 <?php
+
 /**
  * Propovoice
  *
- * @package    NurencyDigital - Propovoice
  * @author     NurencyDigital <support@propovoice.com>
+ *
  * @link       https://propovoice.com
- * @copyright  2024 Propovoice
+ *
+ * @copyright  2025 Propovoice
  *
  * @wordpress-plugin
- * Plugin Name:       Propovoice
+ * Plugin Name:       Propovoice: All-in-One Client Management System
  * Plugin URI:        https://wordpress.org/plugins/propovoice
  * Description:       Lead, Deal, Estimate, Invoice, Billing, Client, Project Automation
- * Version:           1.7.6.7
+ * Version:           1.7.8
  * Author:            Propovoice
  * Author URI:        https://propovoice.com
  * Requires at least: 6.2
@@ -57,7 +59,7 @@ final class Ndpv {
      *
      * @var string
      */
-    private const VERSION = '1.7.6.5';
+    private const VERSION = '1.7.8';
 
     /**
      * Holds various class instances.
@@ -101,8 +103,6 @@ final class Ndpv {
      *
      * @since 1.0.0
      *
-     * @param $prop
-     *
      * @return mixed
      */
     public function __get( $prop ) {
@@ -117,8 +117,6 @@ final class Ndpv {
      * Magic isset to bypass referencing plugin.
      *
      * @since 1.0.0
-     *
-     * @param $prop
      *
      * @return mixed
      */
@@ -199,24 +197,30 @@ final class Ndpv {
         $this->container['cron'] = new Ndpv\Cron\CronCtrl();
         $this->container['style'] = new Ndpv\Cleanup\Style();
     }
+/**
+ * Initialize plugin localization.
+ *
+ * Loads translations automatically on WordPress.org installs.
+ * Falls back to loading from the /languages folder for non.org installs.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+public function localization_setup() {
+    $locale = determine_locale();
+    $mofile = plugin_dir_path( __FILE__ ) . 'languages/propovoice-' . $locale . '.mo';
 
-    /**
-     * Initialize plugin for localization
-     *
-     * @since 1.0.0
-     *
-     * @uses load_plugin_textdomain()
-     *
-     * @return void
-     */
-    public function localization_setup() {
-        load_plugin_textdomain( 'propovoice', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+    if ( file_exists( $mofile ) ) {
+        load_textdomain( 'propovoice', $mofile );
     }
+    // On WordPress.org installs, no need to load manually (handled since WP 4.6).
+}
 
     /**
      * What type of request is this?
      *
-     * @param string $type admin, ajax, cron or public.
+     * @param  string  $type  admin, ajax, cron or public.
      *
      * @since 1.0.0
      *
@@ -284,8 +288,6 @@ final class Ndpv {
      *
      * @since 1.0.0
      *
-     * @param $file
-     *
      * @return string
      */
     public function get_asset_uri( $file ) {
@@ -299,11 +301,23 @@ final class Ndpv {
      *
      * @since 1.0.0
      *
-     * @param $file
-     *
+     * @param  $file
      * @return void
      */
     public function render( $path, $args = [], $is_return = false ) {
+
+        // Load Google Fonts only for the "email/password" view
+        if ( $path === 'email/password' ) {
+        add_action( 'wp_enqueue_scripts', function() {
+            wp_enqueue_style(
+                'propovoice-google-fonts',
+                'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap',
+                [],
+                VERSION
+            );
+        });
+    }
+
         $path = str_replace( '.', '/', $path );
         $view_path = NDPV_PATH . '/view/' . $path . '.php';
         if ( ! file_exists( $view_path ) ) {
@@ -350,6 +364,7 @@ final class Ndpv {
                 $result = null;
             }
         }
+
         return $result;
     }
 
@@ -378,6 +393,7 @@ final class Ndpv {
                 $result = null;
             }
         }
+
         return $result;
     }
 
@@ -390,6 +406,7 @@ final class Ndpv {
      */
     public function get_workspace() {
         $option = get_option( 'ndpv_workspace_default' );
+
         return $option ? absint( $option ) : null;
     }
 
@@ -402,6 +419,7 @@ final class Ndpv {
      */
     public function plain_route() {
         $permalink_structure = get_option( 'permalink_structure' );
+
         return $permalink_structure === '' ? '/(?P<args>.*)' : '';
     }
 
@@ -410,7 +428,7 @@ final class Ndpv {
      *
      * @since 1.0.0
      *
-     * @return boolean
+     * @return bool
      */
     public function wage() {
         return function_exists( 'ndpvp' ) && ndpvp()->wage();
@@ -421,7 +439,7 @@ final class Ndpv {
      *
      * @since 1.0.0
      *
-     * @return boolean
+     * @return bool
      */
     public function wagex() {
         return function_exists( 'ndpvp' ) && method_exists( ndpvp(), 'wagex' ) && ndpvp()->wagex();
@@ -432,7 +450,7 @@ final class Ndpv {
      *
      * @since 1.0.0
      *
-     * @return boolean
+     * @return bool
      */
     public function is_active_module() {
         return function_exists( 'ndpvp' ) && method_exists( ndpvp(), 'is_active_module' ) && ndpvp()->is_active_module();

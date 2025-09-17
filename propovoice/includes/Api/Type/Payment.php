@@ -1,4 +1,5 @@
 <?php
+
 namespace Ndpv\Api\Type;
 
 use Ndpv\Traits\Singleton;
@@ -10,62 +11,72 @@ class Payment {
     public function routes() {
 
         register_rest_route(
-            'ndpv/v1', '/payments/(?P<id>\d+)', [
-				'methods' => 'GET',
-				'callback' => [ $this, 'get_single' ],
-				'permission_callback' => [ $this, 'get_per' ],
-				'args' => [
-					'id' => [
-						'validate_callback' => function ( $param ) {
-							return is_numeric( $param );
-						},
-					],
-				],
-			]
+            'ndpv/v1',
+            '/payments/(?P<id>\d+)',
+            [
+                'methods' => 'GET',
+                'callback' => [ $this, 'get_single' ],
+                'permission_callback' => [ $this, 'get_per' ],
+                'args' => [
+                    'id' => [
+                        'validate_callback' => function ( $param ) {
+                            return is_numeric( $param );
+                        },
+                    ],
+                ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/payments' . ndpv()->plain_route(), [
-				'methods' => 'GET',
-				'callback' => [ $this, 'get' ],
-				'permission_callback' => [ $this, 'get_per' ],
-			]
+            'ndpv/v1',
+            '/payments' . ndpv()->plain_route(),
+            [
+                'methods' => 'GET',
+                'callback' => [ $this, 'get' ],
+                'permission_callback' => [ $this, 'get_per' ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/payments', [
-				'methods' => 'POST',
-				'callback' => [ $this, 'create' ],
-				'permission_callback' => [ $this, 'create_per' ],
-			]
+            'ndpv/v1',
+            '/payments',
+            [
+                'methods' => 'POST',
+                'callback' => [ $this, 'create' ],
+                'permission_callback' => [ $this, 'create_per' ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/payments/(?P<id>\d+)', [
-				'methods' => 'PUT',
-				'callback' => [ $this, 'update' ],
-				'permission_callback' => [ $this, 'update_per' ],
-				'args' => [
-					'id' => [
-						'validate_callback' => function ( $param ) {
-							return is_numeric( $param );
-						},
-					],
-				],
-			]
+            'ndpv/v1',
+            '/payments/(?P<id>\d+)',
+            [
+                'methods' => 'PUT',
+                'callback' => [ $this, 'update' ],
+                'permission_callback' => [ $this, 'update_per' ],
+                'args' => [
+                    'id' => [
+                        'validate_callback' => function ( $param ) {
+                            return is_numeric( $param );
+                        },
+                    ],
+                ],
+            ]
         );
 
         register_rest_route(
-            'ndpv/v1', '/payments/(?P<id>[0-9,]+)', [
-				'methods' => 'DELETE',
-				'callback' => [ $this, 'delete' ],
-				'permission_callback' => [ $this, 'del_per' ],
-				'args' => [
-					'id' => [
-						'sanitize_callback' => 'sanitize_text_field',
-					],
-				],
-			]
+            'ndpv/v1',
+            '/payments/(?P<id>[0-9,]+)',
+            [
+                'methods' => 'DELETE',
+                'callback' => [ $this, 'delete' ],
+                'permission_callback' => [ $this, 'del_per' ],
+                'args' => [
+                    'id' => [
+                        'sanitize_callback' => 'sanitize_text_field',
+                    ],
+                ],
+            ]
         );
     }
 
@@ -125,7 +136,7 @@ class Payment {
         }
 
         $query = new \WP_Query( $args );
-        $total_data = $query->found_posts; //use this for pagination
+        $total_data = $query->found_posts; // use this for pagination
         $result = $data = [];
         while ( $query->have_posts() ) {
             $query->the_post();
@@ -228,7 +239,7 @@ class Payment {
         wp_send_json_success( $result );
     }
 
-    function formatArray( $array, $key ) {
+    public function formatArray( $array, $key ) {
         $custom_array = $new_array = [];
         foreach ( $array as $v ) {
             $custom_array[ $v[ $key ] ][] = $v;
@@ -261,6 +272,7 @@ class Payment {
 
             $new_array[] = $temp_array;
         }
+
         return $new_array;
     }
 
@@ -282,154 +294,233 @@ class Payment {
         $param = $req->get_params();
         $reg_errors = new \WP_Error();
 
-        $type = isset( $param['type'] )
-            ? sanitize_text_field( $param['type'] )
-            : null;
-        //bank form
-        $name = isset( $param['name'] )
-            ? sanitize_text_field( $param['name'] )
-            : null;
-        $details = isset( $param['details'] )
-            ? sanitize_textarea_field( $param['details'] )
-            : null;
-        $default = isset( $param['default'] )
-            ? rest_sanitize_boolean( $param['default'] )
-            : null;
+        $type = isset( $param['type'] ) ? sanitize_text_field( $param['type'] ) : null;
+        $default = isset( $param['default'] ) ? rest_sanitize_boolean( $param['default'] ) : false;
 
-        //paypal form
-        $account_type = isset( $param['account_type'] )
-            ? sanitize_text_field( $param['account_type'] )
-            : null;
-        $account_name = isset( $param['account_name'] )
-            ? sanitize_text_field( $param['account_name'] )
-            : null;
-        $account_email = isset( $param['account_email'] )
-            ? sanitize_email( $param['account_email'] )
-            : null;
-        $client_id = isset( $param['client_id'] )
-            ? sanitize_text_field( $param['client_id'] )
-            : null;
-        $secret_id = isset( $param['secret_id'] )
-            ? sanitize_text_field( $param['secret_id'] )
-            : null;
+        // Bank fields
+        $bank_fields = [
+            'name' => isset( $param['name'] ) ? sanitize_text_field( $param['name'] ) : null,
+            'details' => isset( $param['details'] ) ? sanitize_textarea_field( $param['details'] ) : null,
+        ];
 
-        //stripe form
-        $account_name = isset( $param['account_name'] )
-            ? sanitize_text_field( $param['account_name'] )
-            : null;
-        $public_key = isset( $param['public_key'] )
-            ? sanitize_text_field( $param['public_key'] )
-            : null;
-        $secret_key = isset( $param['secret_key'] )
-            ? sanitize_text_field( $param['secret_key'] )
-            : null;
+        // PayPal fields
+        $paypal_fields = [
+            'account_type' => isset( $param['account_type'] ) ? sanitize_text_field( $param['account_type'] ) : null,
+            'account_name' => isset( $param['account_name'] ) ? sanitize_text_field( $param['account_name'] ) : null,
+            'account_email' => isset( $param['account_email'] ) ? sanitize_email( $param['account_email'] ) : null,
+            'client_id' => isset( $param['client_id'] ) ? sanitize_text_field( $param['client_id'] ) : null,
+            'secret_id' => isset( $param['secret_id'] ) ? sanitize_text_field( $param['secret_id'] ) : null,
+        ];
 
-        /* if (
-            empty($name)
-        ) {
-            $reg_errors->add('field', esc_html__('Bank name is missing', 'propovoice'));
-        } */
+        // Stripe fields
+        $stripe_fields = [
+            'account_name' => isset( $param['account_name'] ) ? sanitize_text_field( $param['account_name'] ) : null,
+            'public_key' => isset( $param['public_key'] ) ? sanitize_text_field( $param['public_key'] ) : null,
+            'secret_key' => isset( $param['secret_key'] ) ? sanitize_text_field( $param['secret_key'] ) : null,
+        ];
 
         if ( $reg_errors->get_error_messages() ) {
             wp_send_json_error( $reg_errors->get_error_messages() );
-        } else {
-            $data = [
-                'post_type' => 'ndpv_payment',
-                'post_title' => $type,
-                'post_content' => '',
-                'post_status' => 'publish',
-                'post_author' => get_current_user_id(),
-            ];
-            $post_id = wp_insert_post( $data );
+        }
 
-            if ( ! is_wp_error( $post_id ) ) {
-                update_post_meta( $post_id, 'ws_id', ndpv()->get_workspace() );
+        $post_id = wp_insert_post(
+            [
+				'post_type' => 'ndpv_payment',
+				'post_title' => $type,
+				'post_content' => '',
+				'post_status' => 'publish',
+				'post_author' => get_current_user_id(),
+			]
+        );
 
-                if ( $type ) {
-                    update_post_meta( $post_id, 'type', $type );
-                }
+        if ( is_wp_error( $post_id ) ) {
+            wp_send_json_error();
+        }
 
-                if ( $type === 'bank' ) {
-                    if ( $name ) {
-                        update_post_meta( $post_id, 'name', $name );
-                    }
+        // Common meta
+        update_post_meta( $post_id, 'ws_id', ndpv()->get_workspace() );
+        update_post_meta( $post_id, 'type', $type );
+        update_post_meta( $post_id, 'default', $default );
 
-                    if ( $details ) {
-                        update_post_meta( $post_id, 'details', $details );
-                    }
-                } elseif ( $type === 'paypal' ) {
-                    if ( $account_type ) {
-                        update_post_meta(
-                            $post_id,
-                            'account_type',
-                            $account_type
-                        );
-                    }
+        // Type-specific meta
+        $fields = [];
+        if ( $type === 'bank' ) {
+            $fields = $bank_fields;
+        } elseif ( $type === 'paypal' ) {
+            $fields = $paypal_fields;
+        } elseif ( $type === 'stripe' ) {
+            $fields = $stripe_fields;
+        }
 
-                    if ( $account_name ) {
-                        update_post_meta(
-                            $post_id,
-                            'account_name',
-                            $account_name
-                        );
-                    }
-
-                    if ( $account_email ) {
-                        update_post_meta(
-                            $post_id,
-                            'account_email',
-                            $account_email
-                        );
-                    }
-
-                    if ( $client_id ) {
-                        update_post_meta( $post_id, 'client_id', $client_id );
-                    }
-
-                    if ( $secret_id ) {
-                        update_post_meta( $post_id, 'secret_id', $secret_id );
-                    }
-                } elseif ( $type === 'stripe' ) {
-                    if ( $account_name ) {
-                        update_post_meta(
-                            $post_id,
-                            'account_name',
-                            $account_name
-                        );
-                    }
-                    if ( $public_key ) {
-                        update_post_meta( $post_id, 'public_key', $public_key );
-                    }
-
-                    if ( $secret_key ) {
-                        update_post_meta( $post_id, 'secret_key', $secret_key );
-                    }
-                }
-
-                if ( $default ) {
-                    update_post_meta( $post_id, 'default', true );
-                } else {
-                    update_post_meta( $post_id, 'default', false );
-                }
-
-                //TODO: when add new bank, but not for all payment
-                $payment_data = [];
-                $payment_data['id'] = $post_id;
-                $payment_data['type'] = 'bank';
-                $payment_meta = get_post_meta( $post_id );
-                $payment_data['name'] = isset( $payment_meta['name'] )
-                    ? $payment_meta['name'][0]
-                    : '';
-                $payment_data['details'] = isset( $payment_meta['details'] )
-                    ? $payment_meta['details'][0]
-                    : '';
-
-                wp_send_json_success( $payment_data );
-            } else {
-                wp_send_json_error();
+        foreach ( $fields as $key => $value ) {
+            if ( $value !== null ) {
+                update_post_meta( $post_id, $key, $value );
             }
         }
+
+        // Response for 'bank' type
+        $payment_data = [
+            'id' => $post_id,
+            'type' => $type,
+            'name' => get_post_meta( $post_id, 'name', true ),
+            'details' => get_post_meta( $post_id, 'details', true ),
+        ];
+
+        wp_send_json_success( $payment_data );
     }
+
+    // public function create( $req ) {
+    //     $param = $req->get_params();
+    //     $reg_errors = new \WP_Error();
+
+    //     $type = isset( $param['type'] )
+    //         ? sanitize_text_field( $param['type'] )
+    //         : null;
+    //     //bank form
+    //     $name = isset( $param['name'] )
+    //         ? sanitize_text_field( $param['name'] )
+    //         : null;
+    //     $details = isset( $param['details'] )
+    //         ? sanitize_textarea_field( $param['details'] )
+    //         : null;
+    //     $default = isset( $param['default'] )
+    //         ? rest_sanitize_boolean( $param['default'] )
+    //         : null;
+
+    //     //paypal form
+    //     $account_type = isset( $param['account_type'] )
+    //         ? sanitize_text_field( $param['account_type'] )
+    //         : null;
+    //     $account_name = isset( $param['account_name'] )
+    //         ? sanitize_text_field( $param['account_name'] )
+    //         : null;
+    //     $account_email = isset( $param['account_email'] )
+    //         ? sanitize_email( $param['account_email'] )
+    //         : null;
+    //     $client_id = isset( $param['client_id'] )
+    //         ? sanitize_text_field( $param['client_id'] )
+    //         : null;
+    //     $secret_id = isset( $param['secret_id'] )
+    //         ? sanitize_text_field( $param['secret_id'] )
+    //         : null;
+
+    //     //stripe form
+    //     $account_name = isset( $param['account_name'] )
+    //         ? sanitize_text_field( $param['account_name'] )
+    //         : null;
+    //     $public_key = isset( $param['public_key'] )
+    //         ? sanitize_text_field( $param['public_key'] )
+    //         : null;
+    //     $secret_key = isset( $param['secret_key'] )
+    //         ? sanitize_text_field( $param['secret_key'] )
+    //         : null;
+
+    //     /* if (
+    //         empty($name)
+    //     ) {
+    //         $reg_errors->add('field', esc_html__('Bank name is missing', 'propovoice'));
+    //     } */
+
+    //     if ( $reg_errors->get_error_messages() ) {
+    //         wp_send_json_error( $reg_errors->get_error_messages() );
+    //     } else {
+    //         $data = [
+    //             'post_type' => 'ndpv_payment',
+    //             'post_title' => $type,
+    //             'post_content' => '',
+    //             'post_status' => 'publish',
+    //             'post_author' => get_current_user_id(),
+    //         ];
+    //         $post_id = wp_insert_post( $data );
+
+    //         if ( ! is_wp_error( $post_id ) ) {
+    //             update_post_meta( $post_id, 'ws_id', ndpv()->get_workspace() );
+
+    //             if ( $type ) {
+    //                 update_post_meta( $post_id, 'type', $type );
+    //             }
+
+    //             if ( $type === 'bank' ) {
+    //                 if ( $name ) {
+    //                     update_post_meta( $post_id, 'name', $name );
+    //                 }
+
+    //                 if ( $details ) {
+    //                     update_post_meta( $post_id, 'details', $details );
+    //                 }
+    //             } elseif ( $type === 'paypal' ) {
+    //                 if ( $account_type ) {
+    //                     update_post_meta(
+    //                         $post_id,
+    //                         'account_type',
+    //                         $account_type
+    //                     );
+    //                 }
+
+    //                 if ( $account_name ) {
+    //                     update_post_meta(
+    //                         $post_id,
+    //                         'account_name',
+    //                         $account_name
+    //                     );
+    //                 }
+
+    //                 if ( $account_email ) {
+    //                     update_post_meta(
+    //                         $post_id,
+    //                         'account_email',
+    //                         $account_email
+    //                     );
+    //                 }
+
+    //                 if ( $client_id ) {
+    //                     update_post_meta( $post_id, 'client_id', $client_id );
+    //                 }
+
+    //                 if ( $secret_id ) {
+    //                     update_post_meta( $post_id, 'secret_id', $secret_id );
+    //                 }
+    //             } elseif ( $type === 'stripe' ) {
+    //                 if ( $account_name ) {
+    //                     update_post_meta(
+    //                         $post_id,
+    //                         'account_name',
+    //                         $account_name
+    //                     );
+    //                 }
+    //                 if ( $public_key ) {
+    //                     update_post_meta( $post_id, 'public_key', $public_key );
+    //                 }
+
+    //                 if ( $secret_key ) {
+    //                     update_post_meta( $post_id, 'secret_key', $secret_key );
+    //                 }
+    //             }
+
+    //             if ( $default ) {
+    //                 update_post_meta( $post_id, 'default', true );
+    //             } else {
+    //                 update_post_meta( $post_id, 'default', false );
+    //             }
+
+    //             //TODO: when add new bank, but not for all payment
+    //             $payment_data = [];
+    //             $payment_data['id'] = $post_id;
+    //             $payment_data['type'] = 'bank';
+    //             $payment_meta = get_post_meta( $post_id );
+    //             $payment_data['name'] = isset( $payment_meta['name'] )
+    //                 ? $payment_meta['name'][0]
+    //                 : '';
+    //             $payment_data['details'] = isset( $payment_meta['details'] )
+    //                 ? $payment_meta['details'][0]
+    //                 : '';
+
+    //             wp_send_json_success( $payment_data );
+    //         } else {
+    //             wp_send_json_error();
+    //         }
+    //     }
+    // }
 
     public function update( $req ) {
         $param = $req->get_params();
@@ -438,7 +529,7 @@ class Payment {
         $type = isset( $param['type'] )
             ? sanitize_text_field( $param['type'] )
             : null;
-        //bank form
+        // bank form
         $name = isset( $param['name'] )
             ? sanitize_text_field( $param['name'] )
             : null;
@@ -449,7 +540,7 @@ class Payment {
             ? rest_sanitize_boolean( $param['default'] )
             : null;
 
-        //paypal form
+        // paypal form
         $account_type = isset( $param['account_type'] )
             ? sanitize_text_field( $param['account_type'] )
             : null;
@@ -466,7 +557,7 @@ class Payment {
             ? sanitize_text_field( $param['secret_id'] )
             : null;
 
-        //stripe form
+        // stripe form
         $account_name = isset( $param['account_name'] )
             ? sanitize_text_field( $param['account_name'] )
             : null;

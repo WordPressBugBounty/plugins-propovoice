@@ -124,10 +124,23 @@
             'remember' => true,
         ];
         wp_login_form( $args );
-        echo '<p class="pv-lost-password"><a href="' . esc_html(wp_lostpassword_url()) . '">' . esc_html__( 'Lost your password?', 'propovoice' ) . '</a></p>';
-        if ( isset( $_GET['login'] ) && sanitize_text_field( $_GET['login'] ) === 'failed' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			echo '<p style="color: red">' . esc_html__( 'You entered wrong credentials', 'propovoice' ) . '</p>';
-        }
+        echo '<p class="pv-lost-password"><a href="' . esc_html( wp_lostpassword_url() ) . '">' . esc_html__( 'Lost your password?', 'propovoice' ) . '</a></p>';
+// Unsplash and sanitize the nonce from GET
+$nonce = isset( $_GET['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) : '';
+
+// Verify nonce
+if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'ndpv_login_form' ) ) {
+    // Invalid nonce — optionally handle or ignore
+    wp_die( esc_html__( 'Invalid request', 'propovoice' ) );
+}
+
+// Proceed with login status
+$login_status = isset( $_GET['login'] ) ? sanitize_text_field( wp_unslash( $_GET['login'] ) ) : '';
+
+if ( $login_status === 'failed' ) {
+    echo '<p style="color: red">' . esc_html__( 'You entered wrong credentials', 'propovoice' ) . '</p>';
+}
+
 		?>
     </div>
 </div>

@@ -37,6 +37,10 @@ class TemplateCtrl {
             'Propovoice Client Invoice',
             'propovoice'
         );
+        $post_templates['package-template.php'] = esc_html__(
+            'Propovoice Client Package',
+            'propovoice'
+        );
         return $post_templates;
     }
 

@@ -581,9 +581,9 @@ class Deal {
                     }
                 }
 
-	      if($lead_id) {
-update_post_meta($lead_id, "_ndpv_allowed_users", $staffs);
-	      }
+				if ( $lead_id ) {
+					update_post_meta( $lead_id, '_ndpv_allowed_users', $staffs );
+				}
 
                 $param['id'] = $post_id;
 
@@ -774,19 +774,18 @@ update_post_meta($lead_id, "_ndpv_allowed_users", $staffs);
     //     return $result;
     // }
 
-  // Refactored code
-  public function reorder_posts($order = [])
-  {
-    $result = [];
-    foreach ($order as $i => $post_id) {
-      $data = array(
-        'ID' => $post_id,
-        'menu_order' => $i
-      );
-      $result[] = wp_update_post($data);
-    }
-    return $result;
-  }
+	// Refactored code
+	public function reorder_posts( $order = [] ) {
+		$result = [];
+		foreach ( $order as $i => $post_id ) {
+			$data = [
+				'ID' => $post_id,
+				'menu_order' => $i,
+			];
+			$result[] = wp_update_post( $data );
+		}
+		return $result;
+	}
 
     public function delete( $req ) {
         $url_params = $req->get_url_params();

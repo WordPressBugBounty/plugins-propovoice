@@ -35,7 +35,7 @@ class SmtpList {
                 'img' => 'https://cdn.cdnlogo.com/logos/m/46/mail-ios.svg',
                 'active' => false,
                 'pro' => true,
-            ]
+            ],
         ];
 
         $form_list = [];

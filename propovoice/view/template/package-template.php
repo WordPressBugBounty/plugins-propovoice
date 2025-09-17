@@ -25,7 +25,16 @@ add_action( 'wp_enqueue_scripts', [ Style::init(), 'clear_styles_and_scripts' ],
 
     $id = isset( $_GET['id'] ) ? absint( $_GET['id'] ) : null; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
     if ( $id && get_post( $id ) ) {
-        $token = isset( $_GET['token'] ) ? sanitize_text_field( $_GET['token'] ) : null; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        // Unsplash and sanitize nonce before verification
+        $nonce = isset( $_GET['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) : '';
+
+        // Verify nonce
+        if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'ndpv_view_post_' . $id ) ) {
+            ndpv()->render( 'template/partial/403' );
+            exit;
+        }
+
+        $token = isset( $_GET['token'] ) ? sanitize_text_field( wp_unslash( $_GET['token'] ) ) : null;
 
         //Check token that send in mail
         $check_permission = false;

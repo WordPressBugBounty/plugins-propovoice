@@ -13,6 +13,7 @@ class Page {
         //Workspace pro
         //Estimate
         //Invoice
+        //Package
         //Proposal
 
         if ( ! get_page_by_path( 'estimate' ) ) {
@@ -37,6 +38,18 @@ class Page {
             ];
             $id = wp_insert_post( $args );
             add_post_meta( $id, '_wp_page_template', 'invoice-template.php' );
+        }
+
+        if ( ! get_page_by_path( 'package' ) ) {
+            $args = [
+                'post_title'    => 'Propovoice Package',
+                'post_name'     => 'package',
+                'post_status'   => 'publish',
+                'post_author'   => get_current_user_id(),
+                'post_type'     => 'page',
+            ];
+            $id = wp_insert_post( $args );
+            add_post_meta( $id, '_wp_page_template', 'package-template.php' );
         }
 
         if ( ! get_page_by_path( 'propovoice-form' ) ) {
